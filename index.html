@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GIS Portfolio</title>
+
+    <!-- SEO placeholder -->
+    <meta name="description" content="GIS portfolio website">
+
+    <!-- Theme / base script -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+            const theme = savedTheme || (prefersDark ? "dark" : "light");
+
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            } else {
+                document.documentElement.removeAttribute("data-theme");
+            }
+        })();
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ===================== -->
+    <!-- BACKGROUND LAYERS -->
+    <!-- ===================== -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+
+    <!-- ===================== -->
+    <!-- HEADER + NAVIGATION -->
+    <!-- ===================== -->
+    <header>
+
+        <div class="logo-area">
+            <h1>NAME</h1>
+
+            <!-- Theme toggle -->
+            <button id="theme-toggle">
+                Toggle theme
+            </button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- ===================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ===================== -->
+    <main>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="content-block">
+                <!-- empty -->
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="content-block">
+                <!-- empty -->
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="content-block">
+                <!-- empty -->
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="content-block">
+                <!-- empty -->
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="content-block">
+                <!-- empty -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== -->
+    <!-- FOOTER -->
+    <!-- ===================== -->
+    <footer>
+        <p>Footer content</p>
+    </footer>
+
+    <!-- ===================== -->
+    <!-- SCRIPTS -->
+    <!-- ===================== -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
