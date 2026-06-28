@@ -7,10 +7,9 @@
 
     <title>GIS Portfolio</title>
 
-    <!-- SEO placeholder -->
     <meta name="description" content="GIS portfolio website">
 
-    <!-- Theme / base script -->
+    <!-- Theme script -->
     <script>
         (function () {
             const savedTheme = localStorage.getItem("theme");
@@ -26,28 +25,26 @@
         })();
     </script>
 
-    <!-- CSS -->
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Your CSS -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-    <!-- ===================== -->
-    <!-- BACKGROUND LAYERS -->
-    <!-- ===================== -->
+    <!-- BACKGROUND -->
     <div class="background-left"></div>
     <div class="background-right"></div>
 
-    <!-- ===================== -->
-    <!-- HEADER + NAVIGATION -->
-    <!-- ===================== -->
+    <!-- HEADER -->
     <header>
 
         <div class="logo-area">
             <h1>NAME</h1>
 
-            <!-- Theme toggle -->
             <button id="theme-toggle">
                 Toggle theme
             </button>
@@ -65,63 +62,74 @@
 
     </header>
 
-    <!-- ===================== -->
-    <!-- MAIN CONTENT -->
-    <!-- ===================== -->
+    <!-- MAIN -->
     <main>
 
         <!-- ABOUT -->
         <section id="about">
             <h2>About</h2>
-            <div class="content-block">
-                <!-- empty -->
-            </div>
+            <div class="content-block"></div>
         </section>
+
+        <!-- EXPERIENCE (MAP SECTION) -->
+        <section id="exp">
+    <h2>Experience</h2>
+
+    <div class="experience-container">
+
+        <!-- MAP -->
+        <div id="map"></div>
+
+        <!-- EXPERIENCE INDEX -->
+        <div class="experience-index">
+
+            <h3>Projects</h3>
+
+            <ul>
+                <li id="exp-loobos">BSc Thesis</li>
+                <li id="exp-wastewater">Industrial wastewater project</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
 
         <!-- SKILLS -->
         <section id="skills">
             <h2>Skills</h2>
-            <div class="content-block">
-                <!-- empty -->
-            </div>
+            <div class="content-block"></div>
         </section>
 
         <!-- PROJECTS -->
         <section id="projects">
             <h2>Projects</h2>
-            <div class="content-block">
-                <!-- empty -->
-            </div>
+            <div class="content-block"></div>
         </section>
 
         <!-- EDUCATION -->
         <section id="education">
             <h2>Education</h2>
-            <div class="content-block">
-                <!-- empty -->
-            </div>
+            <div class="content-block"></div>
         </section>
 
         <!-- CONTACT -->
         <section id="contact">
             <h2>Contact</h2>
-            <div class="content-block">
-                <!-- empty -->
-            </div>
+            <div class="content-block"></div>
         </section>
 
     </main>
 
-    <!-- ===================== -->
     <!-- FOOTER -->
-    <!-- ===================== -->
     <footer>
         <p>Footer content</p>
     </footer>
 
-    <!-- ===================== -->
-    <!-- SCRIPTS -->
-    <!-- ===================== -->
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Your script -->
     <script src="script.js"></script>
 
 </body>
