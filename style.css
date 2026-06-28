@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 20px;
+}
+
+/* PLACEHOLDER BLOCK */
+.content-block {
+    min-height: 100px;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+}
