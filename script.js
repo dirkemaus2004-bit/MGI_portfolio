@@ -15,9 +15,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const loobos = L.marker([52.161368, 5.736439]).addTo(map);
 
     loobos.bindPopup(`
-        <b>Loobos Flux Tower Site</b><br>
-        Bachelor thesis: Ozone effects on Gross Primary Productivity
-    `);
+    <b>Loobos Flux Tower Site</b><br>
+    Bachelor thesis: Ozone effects on Gross Primary Productivity<br><br>
+    <a href="files/bsc_thesis_naar_overleaf.pdf" target="_blank">
+        Click here to view
+    </a>
+`);
 
     // =====================
     // POLYGON (MaasWaal)
