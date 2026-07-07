@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
     loobos.bindPopup(`
     <b>Loobos Flux Tower Site</b><br>
     Bachelor thesis: Ozone effects on Gross Primary Productivity<br><br>
-    <a href="files/bsc_thesis_naar_overleaf.pdf" target="_blank">
+    <a href="files/bsc_thesis_naar_overleaf (2).pdf" target="_blank">
         Click here to view
     </a>
 `);
