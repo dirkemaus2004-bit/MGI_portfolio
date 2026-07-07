@@ -17,121 +17,57 @@ window.addEventListener("DOMContentLoaded", () => {
     loobos.bindPopup(`
     <b>Loobos Flux Tower Site</b><br>
     Bachelor thesis: Ozone effects on Gross Primary Productivity<br><br>
-    <a href="files/bsc_thesis_naar_overleaf (2).pdf" target="_blank">
+    <a href="files/bsc_thesis_naar_overleaf.pdf" target="_blank">
         Click here to view
     </a>
 `);
 
-    // =====================
-    // POLYGON (MaasWaal)
-    // =====================
-    const maasWaal = L.polygon([
-        [51.8358603, 5.3933059],
-        [51.8431024, 5.4091626],
-        [51.8550959, 5.4145989],
-        [51.8675657, 5.4215884],
-        [51.8790733, 5.432461],
-        [51.8877020, 5.4549827],
-        [51.8886607, 5.4798342],
-        [51.8891400, 5.5039091],
-        [51.8939328, 5.5303139],
-        [51.9006420, 5.5520590],
-        [51.9020795, 5.5730274],
-        [51.8987252, 5.5885596],
-        [51.8992044, 5.6235071],
-        [51.8944418, 5.6630339],
-        [51.8957391, 5.6914144],
-        [51.8816972, 5.7589143],
-        [51.8717328, 5.8101921],
-        [51.8652424, 5.8259591],
-        [51.8554797, 5.8260092],
-        [51.8433854, 5.8134229],
-        [51.8343125, 5.8057313],
-        [51.8384247, 5.7959017],
-        [51.8400014, 5.7775284],
-        [51.8333789, 5.7719143],
-        [51.8236009, 5.7719143],
-        [51.8078256, 5.7800802],
-        [51.7980421, 5.7933498],
-        [51.8027763, 5.8045779],
-        [51.8056166, 5.8152957],
-        [51.7955170, 5.8260135],
-        [51.7876251, 5.8357105],
-        [51.7734162, 5.8474490],
-        [51.7582551, 5.8607186],
-        [51.7588869, 5.8392831],
-        [51.7573074, 5.8107024],
-        [51.7525684, 5.7805906],
-        [51.7535162, 5.7545617],
-        [51.7610982, 5.7433336],
-        [51.7699422, 5.7336366],
-        [51.7746794, 5.7203670],
-        [51.7753110, 5.7035248],
-        [51.7850994, 5.6943381],
-        [51.7907820, 5.6877033],
-        [51.7925814, 5.6706238],
-        [51.7962314, 5.6583669],
-        [51.8032498, 5.6501956],
-        [51.8122318, 5.6456559],
-        [51.8161608, 5.6420242],
-        [51.8198089, 5.6329450],
-        [51.8189670, 5.6188722],
-        [51.8237373, 5.6075231],
-        [51.8287875, 5.5948122],
-        [51.8293486, 5.5839171],
-        [51.8273847, 5.5702982],
-        [51.8276653, 5.5562254],
-        [51.8211727, 5.5475317],
-        [51.8161215, 5.5407223],
-        [51.8189278, 5.5248336],
-        [51.8194890, 5.5116687],
-        [51.8256621, 5.5075831],
-        [51.8295899, 5.4994117],
-        [51.8293094, 5.4880627],
-        [51.8262232, 5.4789834],
-        [51.8178053, 5.4758057],
-        [51.8127538, 5.4676344],
-        [51.8098200, 5.4521317],
-        [51.8103254, 5.4325125],
-        [51.8131051, 5.4214767],
-        [51.8199272, 5.4157545],
-        [51.8224537, 5.4059449],
-        [51.8199272, 5.3981789],
-        [51.8095673, 5.3900043],
-        [51.8012271, 5.3785597],
-        [51.7918741, 5.3675239],
-        [51.8029963, 5.3495397],
-        [51.8088091, 5.3679327],
-        [51.8206852, 5.3781510],
-        [51.8267483, 5.3822383],
-        [51.8358603, 5.3933059]
-    ], {
-        color: "black",
-        weight: 2,
-        fillColor: "#000000",
-        fillOpacity: 0.2
-    }).addTo(map);
+   // =====================
+// POLYGON (MaasWaal from GeoJSON)
+// =====================
+let maasWaal;
 
-    // =====================
-    // INTERACTION
-    // =====================
-    maasWaal.bindPopup("Industrial wastewater project");
+fetch("files/LandvanMaasenWaal.geojson")
+    .then(response => response.json())
+    .then(data => {
 
-    maasWaal.on("mouseover", function () {
-        this.setStyle({ fillOpacity: 0.35 });
+        maasWaal = L.geoJSON(data, {
+
+            style: {
+                color: "black",
+                weight: 2,
+                fillColor: "#000000",
+                fillOpacity: 0.2
+            },
+
+            onEachFeature: function(feature, layer){
+
+                layer.bindPopup(`
+                    <b>${feature.properties.name}</b><br>
+                    ${feature.properties.project}
+                `);
+
+                layer.on("mouseover", function () {
+                    this.setStyle({ fillOpacity: 0.35 });
+                });
+
+                layer.on("mouseout", function () {
+                    this.setStyle({ fillOpacity: 0.2 });
+                });
+
+            }
+
+        }).addTo(map);
+
     });
 
-    maasWaal.on("mouseout", function () {
-        this.setStyle({ fillOpacity: 0.2 });
-    });
+expWastewater.addEventListener("click", () => {
 
-    const expLoobos = document.getElementById("exp-loobos");
-const expWastewater = document.getElementById("exp-wastewater");
+    if (maasWaal) {
+        map.fitBounds(maasWaal.getBounds());
+        maasWaal.openPopup();
+    }
 
-// Zoom to marker
-expLoobos.addEventListener("click", () => {
-    map.setView([52.161368, 5.736439], 12);
-    loobos.openPopup();
 });
 
 // Zoom to polygon
