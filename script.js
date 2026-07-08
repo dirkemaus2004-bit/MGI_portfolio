@@ -14,6 +14,26 @@ window.addEventListener("DOMContentLoaded", () => {
     // =====================
     const loobos = L.marker([52.161368, 5.736439]).addTo(map);
 
+// =====================
+// TRACE FOREST PROJECT
+// =====================
+
+    const traceForest = L.marker([52.032835, 6.649352]).addTo(map);
+
+traceForest.bindPopup(`
+    <b>TRACE Forest Biodiversity Dashboard</b><br><br>
+
+    Interactive web application combining:
+    <ul>
+        <li>LiDAR-derived forest metrics</li>
+        <li>Citizen science observations</li>
+    </ul>
+
+    <a href="files/prototype_presentation.pdf" target="_blank">
+        Open prototype description
+    </a>
+`);
+
     loobos.bindPopup(`
     <b>Loobos Flux Tower Site</b><br>
     Bachelor thesis: Ozone effects on Gross Primary Productivity<br><br>
@@ -21,6 +41,26 @@ window.addEventListener("DOMContentLoaded", () => {
         Click here to view
     </a>
 `);
+
+const expLoobos = document.getElementById("exp-loobos");
+const expWastewater = document.getElementById("exp-wastewater");
+const expTrace = document.getElementById("exp-trace");
+
+expLoobos.addEventListener("click", () => {
+    map.setView([52.161368, 5.736439], 12);
+    loobos.openPopup();
+});
+
+expTrace.addEventListener("click", () => {
+
+    map.setView(
+        [52.032835, 6.649352],
+        14
+    );
+
+    traceForest.openPopup();
+
+});
 
    // =====================
 // POLYGON (MaasWaal from GeoJSON)
@@ -64,15 +104,15 @@ fetch("files/LandvanMaasenWaal.geojson")
 expWastewater.addEventListener("click", () => {
 
     if (maasWaal) {
+
         map.fitBounds(maasWaal.getBounds());
-        maasWaal.openPopup();
+
+        maasWaal.eachLayer(function(layer){
+            layer.openPopup();
+        });
+
     }
 
 });
 
-// Zoom to polygon
-expWastewater.addEventListener("click", () => {
-    map.fitBounds(maasWaal.getBounds());
-    maasWaal.openPopup();
-});
 })
