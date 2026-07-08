@@ -1,718 +1,318 @@
-/* =========================
-   RESET
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-
-:root {
-
-    --background: #07111f;
-    --panel: rgba(15, 23, 42, 0.72);
-    --panel-light: rgba(30, 41, 59, 0.65);
-
-    --text: #e5e7eb;
-    --accent: #38bdf8;
-
+:root{
+    --background:#07111f;
+    --panel:rgba(15,23,42,0.65);
+    --text:#e5e7eb;
+    --accent:#38bdf8;
 }
 
-
-
-/* =========================
-   BODY
-========================= */
-
-body {
-
-    font-family: Verdana, sans-serif;
-
-    color: var(--text);
-
-    line-height: 1.6;
-
+body{
+    font-family:Verdana,sans-serif;
+    color:var(--text);
+    line-height:1.6;
     background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(56,189,248,0.18),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 80% 40%,
-            rgba(34,197,94,0.12),
-            transparent 40%
-        ),
-
-        radial-gradient(
-            circle at 40% 80%,
-            rgba(168,85,247,0.12),
-            transparent 35%
-        ),
-
-        var(--background);
-
-
-    background-attachment: fixed;
-
+    radial-gradient(circle at 20% 20%,rgba(56,189,248,0.18),transparent 35%),
+    radial-gradient(circle at 80% 40%,rgba(34,197,94,0.12),transparent 40%),
+    radial-gradient(circle at 40% 80%,rgba(168,85,247,0.12),transparent 35%),
+    var(--background);
+    background-attachment:fixed;
 }
 
-
-
-
-/* =========================
-   TOPOGRAPHIC LINES
-========================= */
-
-body::before {
-
-
+body::before{
     content:"";
-
-    position: fixed;
-
+    position:fixed;
     inset:0;
-
     pointer-events:none;
-
-
-    opacity:0.22;
-
-
+    opacity:0.2;
     background-image:
-
     repeating-radial-gradient(
         ellipse at center,
-        transparent 0px,
+        transparent 0,
         transparent 45px,
         rgba(255,255,255,0.15) 47px,
         transparent 50px
     );
-
-
     z-index:-1;
-
-
 }
 
 
+/* HEADER */
 
-
-
-/* =========================
-   HEADER
-========================= */
-
-
-header {
-
-
-    position: sticky;
-
+header{
+    position:sticky;
     top:0;
-
     z-index:1000;
-
-
-    padding:25px;
-
-
-    background:
-
-    rgba(15,23,42,0.65);
-
-
-    backdrop-filter: blur(12px);
-
-
-    text-align:center;
-
-
-}
-
-
-
-
-
-.logo-area {
-
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-
-}
-
-
-
-.logo-area h1 {
-
-
-    font-size:42px;
-
-    letter-spacing:4px;
-
-    color:var(--accent);
-
-    margin-bottom:10px;
-
-
-}
-
-
-
-#theme-toggle {
-
-
-    position:absolute;
-
-    right:30px;
-
-    top:25px;
-
-
-    background:rgba(255,255,255,0.1);
-
-    color:white;
-
-    border:none;
-
-    padding:8px 15px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-/* NAVIGATION */
-
-
-nav ul {
-
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:30px;
-
-    list-style:none;
-
-    margin-top:15px;
-
-
-}
-
-
-
-nav a {
-
-
-    color:var(--text);
-
-    text-decoration:none;
-
-    font-size:15px;
-
-
-}
-
-
-
-nav a:hover {
-
-
-    color:var(--accent);
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-   MAIN
-========================= */
-
-
-main {
-
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:40px 20px;
-
-
-}
-
-
-
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-
-section {
-
-
-    margin-bottom:80px;
-
-    padding:30px;
-
-
-    background:
-
-    rgba(15,23,42,0.55);
-
-
-    backdrop-filter:
-
-    blur(15px);
-
-
-    border-radius:20px;
-
-
-    border:
-
-    1px solid rgba(255,255,255,0.08);
-
-
-}
-
-
-
-
-
-section h2 {
-
-
-    color:var(--accent);
-
-    margin-bottom:25px;
-
-    font-size:30px;
-
-
-}
-
-
-
-
-
-
-
-/* =========================
-   ABOUT
-========================= */
-
-
-.about-container {
-
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:40px;
-
-
-}
-
-
-
-.about-text {
-
-
-    flex:1;
-
-}
-
-
-
-.profile-photo {
-
-
-    width:230px;
-
-    height:230px;
-
-
-    object-fit:cover;
-
-
-    border-radius:50%;
-
-
-    border:
-
-    3px solid var(--accent);
-
-
-}
-
-
-
-
-
-
-
-/* =========================
-   CESIUM MAP
-========================= */
-
-
-.experience-layout {
-
-
-    display:flex;
-
-    gap:25px;
-
-
-}
-
-
-
-#cesium-map {
-    width: 100%;
-    height: 600px;
-}
-
-
-
-.experience-index {
-
-
-    flex:1;
-
-
-    background:
-
-    rgba(15,23,42,0.75);
-
-
     padding:20px;
-
-    border-radius:15px;
-
-
+    background:rgba(15,23,42,0.65);
+    backdrop-filter:blur(12px);
+    text-align:center;
 }
 
-
-
-.experience-index h3 {
-
-
-    color:var(--accent);
-
-    margin-bottom:15px;
-
-
-}
-
-
-
-.experience-index ul {
-
-
-    list-style:none;
-
-
-}
-
-
-
-.experience-item {
-
-
-    padding:15px;
-
-    margin-bottom:12px;
-
-
-    background:
-
-    rgba(255,255,255,0.08);
-
-
-    border-radius:10px;
-
-
-    cursor:pointer;
-
-
-    transition:.2s;
-
-
-}
-
-
-
-.experience-item:hover {
-
-
-    background:
-
-    rgba(56,189,248,0.25);
-
-
-}
-
-
-
-
-
-
-
-/* =========================
-   EDUCATION
-========================= */
-
-
-.education-container {
-
-
+.logo-area{
     display:flex;
-
     flex-direction:column;
-
-    gap:40px;
-
-
-}
-
-
-
-.education-info {
-
-
-    text-align:center;
-
-
-}
-
-
-
-.education-info h3 {
-
-
-    font-size:28px;
-
-    color:var(--accent);
-
-
-}
-
-
-
-
-
-.education-timeline {
-
-
-    display:flex;
-
-
-    justify-content:space-between;
-
-
-    position:relative;
-
-
-}
-
-
-
-.education-timeline::before {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    top:50%;
-
-
-    left:5%;
-
-
-    right:5%;
-
-
-    height:3px;
-
-
-    background:
-
-    rgba(56,189,248,0.5);
-
-
-}
-
-
-
-.timeline-event {
-
-
-    position:relative;
-
-
-    z-index:1;
-
-
-    padding:15px;
-
-
-    background:
-
-    rgba(15,23,42,0.9);
-
-
-    border-radius:50%;
-
-
-    width:110px;
-
-    height:110px;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
     align-items:center;
+}
 
+.logo-area h1{
+    font-size:40px;
+    letter-spacing:4px;
+    color:var(--accent);
+}
 
-    text-align:center;
-
-
+#theme-toggle{
+    position:absolute;
+    right:25px;
+    top:20px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
     cursor:pointer;
-
-
-    border:
-
-    2px solid var(--accent);
-
-
-    transition:.3s;
-
-
 }
 
 
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    list-style:none;
+    margin-top:15px;
+}
 
-.timeline-event:hover {
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:15px;
+}
 
-
-    transform:scale(1.1);
-
-
-    background:
-
-    rgba(56,189,248,0.25);
-
-
+nav a:hover{
+    color:var(--accent);
 }
 
 
+/* STORY MAP LAYOUT */
+
+.story-layout{
+    display:flex;
+    max-width:1500px;
+    margin:auto;
+}
+
+.story-content{
+    width:55%;
+    padding:35px;
+}
+
+.map-container{
+    width:45%;
+    height:100vh;
+    position:sticky;
+    top:0;
+}
+
+#cesium-map{
+    width:100%;
+    height:100vh;
+}
 
 
+/* SECTIONS */
+
+section{
+    margin-bottom:45px;
+    padding:25px;
+    background:rgba(15,23,42,0.55);
+    backdrop-filter:blur(15px);
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+section h2{
+    color:var(--accent);
+    margin-bottom:20px;
+    font-size:30px;
+}
 
 
+/* ABOUT */
 
-/* =========================
-   FOOTER
-========================= */
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.profile-photo{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid var(--accent);
+}
 
 
-footer {
+/* EXPERIENCE */
+
+.experience-index{
+    background:rgba(15,23,42,0.75);
+    padding:20px;
+    border-radius:15px;
+}
+
+.experience-index h3{
+    color:var(--accent);
+    margin-bottom:15px;
+}
+
+.experience-index ul{
+    list-style:none;
+}
+
+.experience-item{
+    padding:15px;
+    margin-bottom:12px;
+    background:rgba(255,255,255,0.08);
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.experience-item:hover{
+    background:rgba(56,189,248,0.25);
+}
+
+.project-info{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.15);
+}
+
+.project-info h3{
+    color:var(--accent);
+}
+
+.project-info a{
+    color:var(--accent);
+}
 
 
+/* EDUCATION */
+
+.education-container{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+}
+
+.education-info{
     text-align:center;
+}
 
-    padding:30px;
-
-    opacity:0.7;
-
-
+.education-info h3{
+    color:var(--accent);
+    font-size:26px;
 }
 
 
+.education-timeline{
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    gap:15px;
+}
+
+.education-timeline::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:5%;
+    right:5%;
+    height:3px;
+    background:rgba(56,189,248,0.5);
+}
 
 
+.timeline-event{
+    position:relative;
+    z-index:1;
+    width:105px;
+    height:105px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:10px;
+    background:rgba(15,23,42,0.9);
+    border-radius:50%;
+    border:2px solid var(--accent);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.timeline-event:hover{
+    transform:scale(1.1);
+    background:rgba(56,189,248,0.25);
+}
 
 
-/* =========================
-   MOBILE
-========================= */
+/* FOOTER */
 
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:0.7;
+}
+
+
+/* MOBILE */
 
 @media(max-width:900px){
 
+.story-layout{
+    flex-direction:column;
+}
 
-    .experience-layout,
+.story-content,
+.map-container{
+    width:100%;
+}
 
-    .about-container {
+.map-container{
+    position:relative;
+    height:500px;
+    order:-1;
+}
 
+#cesium-map{
+    height:500px;
+}
 
-        flex-direction:column;
+.about-container{
+    flex-direction:column;
+}
 
+nav ul{
+    flex-wrap:wrap;
+}
 
-    }
+.education-timeline{
+    flex-direction:column;
+    align-items:center;
+}
 
-
-    nav ul {
-
-
-        flex-wrap:wrap;
-
-    }
-
-
-    .education-timeline {
-
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:30px;
-
-
-    }
-
-
-    .education-timeline::before {
-
-
-        display:none;
-
-
-    }
-
-
+.education-timeline::before{
+    display:none;
+}
 
 }

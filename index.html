@@ -11,32 +11,25 @@
 <meta name="description" content="GIS portfolio website">
 
 
-<!-- Theme initialization -->
 <script>
 (function(){
 
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const savedTheme = localStorage.getItem("theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    const theme = savedTheme || (prefersDark ? "dark" : "light");
+const theme = savedTheme || (prefersDark ? "dark" : "light");
 
-    if(theme === "dark"){
-        document.documentElement.setAttribute("data-theme","dark");
-    }
+if(theme==="dark"){
+    document.documentElement.setAttribute("data-theme","dark");
+}
 
 })();
 </script>
 
 
-<!-- Cesium CSS -->
-<link 
-href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css"
-rel="stylesheet">
+<link href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
-
-<!-- Website CSS -->
 <link rel="stylesheet" href="style.css">
-
 
 </head>
 
@@ -82,12 +75,16 @@ Toggle theme
 
 
 
-
 <main>
 
 
+<!-- ======================
+ABOUT
+====================== -->
+
 
 <section id="about">
+
 
 <h2>About Me</h2>
 
@@ -97,30 +94,21 @@ Toggle theme
 
 <div class="about-text">
 
-<p>
-Hi there! I'm Dirk, a double Master's student in
-Geo-Information Science and Climate Studies with a strong
-interest in Earth system science and the ways human activities
-are reshaping our planet.
-</p>
-
 
 <p>
-I began my studies with a Bachelor's degree in Environmental
-Sciences at Wageningen University & Research, where I am
-currently continuing my education through both Master's
-programmes. Throughout my studies, I have developed experience
-with remote sensing, spatial analysis, and geospatial techniques
-to study environmental processes.
+Hi there! I'm Dirk, a double Master's student in Geo-Information Science and Climate Studies with a strong interest in Earth system science and the ways human activities are reshaping our planet. I began my studies with a Bachelor's degree in Environmental Sciences at Wageningen University & Research, where I am currently continuing my education through both Master's programmes. Throughout my studies, I have developed experience with remote sensing, spatial analysis, and geospatial techniques to study environmental processes.
 </p>
+
 
 </div>
+
 
 
 <img 
 src="files/foto.jpg"
 class="profile-photo"
 alt="Profile photo">
+
 
 </div>
 
@@ -131,16 +119,22 @@ alt="Profile photo">
 
 
 
+<!-- ======================
+STORY MAP SECTION
+====================== -->
+
+
+<div class="story-layout">
+
+
+<div class="story-content">
+
+
+
 <section id="experience">
 
 
 <h2>Experience</h2>
-
-
-<div class="experience-layout">
-
-
-<div id="cesium-map"></div>
 
 
 
@@ -176,7 +170,27 @@ Glyphosate detection project
 </ul>
 
 
+
+<div class="project-info">
+
+
+<h3 id="project-title">
+Select a project
+</h3>
+
+
+<p id="project-description">
+Click a project to view details.
+</p>
+
+
+<a id="project-link" target="_blank">
+Open project
+</a>
+
+
 </div>
+
 
 
 </div>
@@ -193,6 +207,7 @@ Glyphosate detection project
 
 
 <h2>Education</h2>
+
 
 
 <div class="education-container">
@@ -216,27 +231,39 @@ Glyphosate detection project
 <div class="education-timeline">
 
 
+
 <div class="timeline-event" data-index="0">
+
 2016<br>
 High school
+
 </div>
+
 
 
 <div class="timeline-event" data-index="1">
+
 2022<br>
 BSc Environmental Sciences
+
 </div>
+
 
 
 <div class="timeline-event" data-index="2">
+
 2022<br>
 Exchange semester
+
 </div>
 
 
+
 <div class="timeline-event" data-index="3">
+
 2025<br>
-MSc Geo-information Science
+MSc GIS & Climate Studies
+
 </div>
 
 
@@ -248,6 +275,27 @@ MSc Geo-information Science
 
 
 </section>
+
+
+
+</div>
+
+
+
+
+<!-- FIXED CESIUM MAP -->
+
+
+<div class="map-container">
+
+<div id="cesium-map"></div>
+
+</div>
+
+
+
+</div>
+
 
 
 
@@ -256,24 +304,26 @@ MSc Geo-information Science
 
 <section id="skills">
 
-<h2>Skills</h2>
+<h2>
+Skills
+</h2>
 
 <div class="content-block"></div>
 
 </section>
-
 
 
 
 
 <section id="projects">
 
-<h2>Projects</h2>
+<h2>
+Projects
+</h2>
 
 <div class="content-block"></div>
 
 </section>
-
 
 
 
@@ -281,7 +331,9 @@ MSc Geo-information Science
 
 <section id="contact">
 
-<h2>Contact</h2>
+<h2>
+Contact
+</h2>
 
 <div class="content-block"></div>
 
@@ -289,8 +341,8 @@ MSc Geo-information Science
 
 
 
-
 </main>
+
 
 
 
@@ -311,6 +363,7 @@ GIS Portfolio
 <script src="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Cesium.js"></script>
 
 <script src="script.js"></script>
+
 
 
 </body>
