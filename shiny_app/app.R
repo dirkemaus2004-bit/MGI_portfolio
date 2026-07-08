@@ -5,11 +5,43 @@ library(DT)
 
 year <- "2020"
 
-parcel_csv <- paste0("../downloading/metadata/parcel_metadata",year,".csv")
-image_csv  <- paste0("../downloading/metadata/image_metadata",year,".csv")
-image_root <- paste0("../downloading/images_",year)
+# =====================
+# FILE PATHS
+# =====================
 
-addResourcePath("plot_images", normalizePath(image_root))
+# Find the folder containing app.R
+app_dir <- normalizePath(getwd())
+
+parcel_csv <- file.path(
+  app_dir,
+  "data",
+  "metadata",
+  paste0("parcel_metadata", year, "_final.csv")
+)
+
+image_csv <- file.path(
+  app_dir,
+  "data",
+  "metadata",
+  paste0("image_metadata", year, "_final.csv")
+)
+
+image_root <- file.path(
+  app_dir,
+  "data",
+  paste0("images_", year)
+)
+
+# Make images available to Shiny
+addResourcePath(
+  "plot_images",
+  image_root
+)
+
+
+# =====================
+# LOAD DATA
+# =====================
 
 label_choices <- c(
   "1 - green" = "green",
@@ -19,8 +51,16 @@ label_choices <- c(
   "discard / no data" = "no_data"
 )
 
-parcel_meta <- read_csv(parcel_csv, show_col_types = FALSE)
-image_meta  <- read_csv(image_csv, show_col_types = FALSE)
+parcel_meta <- read_csv(
+  parcel_csv,
+  show_col_types = FALSE
+)
+
+image_meta <- read_csv(
+  image_csv,
+  show_col_types = FALSE
+)
+
 
 parcel_meta <- parcel_meta |>
   mutate(
@@ -30,6 +70,7 @@ parcel_meta <- parcel_meta |>
       TRUE ~ FALSE
     )
   )
+
 
 image_meta <- image_meta |>
   mutate(
@@ -131,19 +172,27 @@ server <- function(input, output, session) {
   })
   
   output$image_cards <- renderUI({
+    
     imgs <- selected_images()
-    plot_folder <- selected_parcel()$folder_name[1]
     
     tagList(lapply(seq_len(nrow(imgs)), function(i) {
+      
       row <- imgs[i, ]
       
-      png_file <- gsub("\\.tif$", ".png", basename(row$file_path))
-      img_src <- file.path("plot_images", plot_folder, png_file)
+      png_file <- gsub(
+        "\\.tif$",
+        ".png",
+        basename(row$file_path)
+      )
       
-      default_label <- ifelse(
-        is.na(row$class_label) || row$class_label == "",
-        row$suggested_class_label,
-        row$class_label
+      plot_folder <- basename(
+        dirname(row$file_path)
+      )
+      
+      img_src <- file.path(
+        "plot_images",
+        plot_folder,
+        png_file
       )
       
       wellPanel(
@@ -155,24 +204,18 @@ server <- function(input, output, session) {
               style = "max-width:100%; border:1px solid #ccc;"
             )
           ),
+          
           column(
             8,
             h4(row$image_id),
             p(paste("Date:", row$image_date)),
             p(paste("NDVI mean:", round(row$ndvi_mean, 3))),
             p(paste("NDVI SD:", round(row$ndvi_sd, 3))),
-            p(paste("Suggested:", row$suggested_class_label)),
-            uiOutput(paste0("discard_status_", row$image_id)),
-            
-            selectInput(
-              paste0("label_", row$image_id),
-              "Label",
-              choices = label_choices,
-              selected = default_label
-            )
+            p(paste("Suggested:", row$suggested_class_label))
           )
         )
       )
+      
     }))
   })
   

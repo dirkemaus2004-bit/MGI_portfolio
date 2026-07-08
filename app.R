@@ -5,9 +5,9 @@ library(DT)
 
 year <- "2020"
 
-parcel_csv <- paste0("../downloading/metadata/parcel_metadata",year,".csv")
-image_csv  <- paste0("../downloading/metadata/image_metadata",year,".csv")
-image_root <- paste0("../downloading/images_",year)
+parcel_csv <- paste0("data/metadata/parcel_metadata", year, "_final.csv")
+image_csv  <- paste0("data/metadata/image_metadata", year, "_final.csv")
+image_root <- paste0("data/images_", year)
 
 addResourcePath("plot_images", normalizePath(image_root))
 
@@ -21,6 +21,19 @@ label_choices <- c(
 
 parcel_meta <- read_csv(parcel_csv, show_col_types = FALSE)
 image_meta  <- read_csv(image_csv, show_col_types = FALSE)
+
+head(image_meta[, c("file_path", "image_id")])
+list.files("shiny_app/data/images_2020/plot_1")
+
+list.files(
+  "data/images_2020",
+  recursive = TRUE
+)[1:30]
+
+length(list.files(
+  "data/images_2020",
+  recursive = TRUE
+))
 
 parcel_meta <- parcel_meta |>
   mutate(
@@ -132,13 +145,20 @@ server <- function(input, output, session) {
   
   output$image_cards <- renderUI({
     imgs <- selected_images()
-    plot_folder <- selected_parcel()$folder_name[1]
     
     tagList(lapply(seq_len(nrow(imgs)), function(i) {
+      
       row <- imgs[i, ]
       
       png_file <- gsub("\\.tif$", ".png", basename(row$file_path))
-      img_src <- file.path("plot_images", plot_folder, png_file)
+      
+      plot_folder <- basename(dirname(row$file_path))
+      
+      img_src <- file.path(
+        "plot_images",
+        plot_folder,
+        png_file
+      )
       
       default_label <- ifelse(
         is.na(row$class_label) || row$class_label == "",

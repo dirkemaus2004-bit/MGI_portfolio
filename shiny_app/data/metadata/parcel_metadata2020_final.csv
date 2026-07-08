@@ -1,164 +1,164 @@
 parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
-1,2020_725306,plot_1,0,FALSE,
+1,2020_725306,plot_1,0,FALSE,NA
 2,2020_658020,plot_2,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 3,2020_235518,plot_3,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 4,2020_88672,plot_4,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 5,2020_41476,plot_5,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 6,2020_659454,plot_6,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-7,2020_217205,plot_7,0,FALSE,
-8,2020_152329,plot_8,0,FALSE,
+7,2020_217205,plot_7,0,FALSE,NA
+8,2020_152329,plot_8,0,FALSE,NA
 9,2020_768815,plot_9,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-10,2020_623865,plot_10,0,FALSE,
-11,2020_533521,plot_11,0,FALSE,
-12,2020_180163,plot_12,0,FALSE,
+10,2020_623865,plot_10,0,FALSE,NA
+11,2020_533521,plot_11,0,FALSE,NA
+12,2020_180163,plot_12,0,FALSE,NA
 13,2020_185385,plot_13,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-14,2020_730930,plot_14,0,FALSE,
+14,2020_730930,plot_14,0,FALSE,NA
 15,2020_197074,plot_15,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 16,2020_372266,plot_16,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-17,2020_637667,plot_17,0,FALSE,
+17,2020_637667,plot_17,0,FALSE,NA
 18,2020_244943,plot_18,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 19,2020_74147,plot_19,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-20,2020_279813,plot_20,0,FALSE,
+20,2020_279813,plot_20,0,FALSE,NA
 21,2020_492529,plot_21,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-22,2020_661768,plot_22,0,FALSE,
-23,2020_148680,plot_23,0,FALSE,
-24,2020_322399,plot_24,0,FALSE,
-25,2020_224081,plot_25,0,FALSE,
-26,2020_248026,plot_26,0,FALSE,
-27,2020_759814,plot_27,0,FALSE,
-28,2020_269559,plot_28,0,FALSE,
-29,2020_459710,plot_29,0,FALSE,
-30,2020_492501,plot_30,0,FALSE,
+22,2020_661768,plot_22,0,FALSE,NA
+23,2020_148680,plot_23,0,FALSE,NA
+24,2020_322399,plot_24,0,FALSE,NA
+25,2020_224081,plot_25,0,FALSE,NA
+26,2020_248026,plot_26,0,FALSE,NA
+27,2020_759814,plot_27,0,FALSE,NA
+28,2020_269559,plot_28,0,FALSE,NA
+29,2020_459710,plot_29,0,FALSE,NA
+30,2020_492501,plot_30,0,FALSE,NA
 31,2020_46361,plot_31,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-32,2020_378553,plot_32,0,FALSE,
-33,2020_80612,plot_33,0,FALSE,
-34,2020_729467,plot_34,0,FALSE,
-35,2020_605479,plot_35,0,FALSE,
-36,2020_659328,plot_36,0,FALSE,
-37,2020_600447,plot_37,0,FALSE,
-38,2020_186575,plot_38,0,FALSE,
-39,2020_673935,plot_39,0,FALSE,
-40,2020_235009,plot_40,0,FALSE,
-41,2020_255313,plot_41,0,FALSE,
-42,2020_603772,plot_42,0,FALSE,
-43,2020_742732,plot_43,0,FALSE,
-44,2020_14712,plot_44,0,FALSE,
-45,2020_22608,plot_45,0,FALSE,
+32,2020_378553,plot_32,0,FALSE,NA
+33,2020_80612,plot_33,0,FALSE,NA
+34,2020_729467,plot_34,0,FALSE,NA
+35,2020_605479,plot_35,0,FALSE,NA
+36,2020_659328,plot_36,0,FALSE,NA
+37,2020_600447,plot_37,0,FALSE,NA
+38,2020_186575,plot_38,0,FALSE,NA
+39,2020_673935,plot_39,0,FALSE,NA
+40,2020_235009,plot_40,0,FALSE,NA
+41,2020_255313,plot_41,0,FALSE,NA
+42,2020_603772,plot_42,0,FALSE,NA
+43,2020_742732,plot_43,0,FALSE,NA
+44,2020_14712,plot_44,0,FALSE,NA
+45,2020_22608,plot_45,0,FALSE,NA
 46,2020_707866,plot_46,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-47,2020_538414,plot_47,0,FALSE,
-48,2020_183126,plot_48,0,FALSE,
-49,2020_148811,plot_49,0,FALSE,
-50,2020_533736,plot_50,0,FALSE,
+47,2020_538414,plot_47,0,FALSE,NA
+48,2020_183126,plot_48,0,FALSE,NA
+49,2020_148811,plot_49,0,FALSE,NA
+50,2020_533736,plot_50,0,FALSE,NA
 51,2020_728348,plot_51,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 52,2020_512068,plot_52,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-53,2020_228207,plot_53,0,FALSE,
+53,2020_228207,plot_53,0,FALSE,NA
 54,2020_160222,plot_54,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-55,2020_19935,plot_55,0,FALSE,
-56,2020_615914,plot_56,0,FALSE,
+55,2020_19935,plot_55,0,FALSE,NA
+56,2020_615914,plot_56,0,FALSE,NA
 57,2020_3168,plot_57,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-58,2020_691042,plot_58,0,FALSE,
+58,2020_691042,plot_58,0,FALSE,NA
 59,2020_612677,plot_59,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-60,2020_38965,plot_60,0,FALSE,
-61,2020_259558,plot_61,0,FALSE,
-62,2020_255965,plot_62,0,FALSE,
-63,2020_569094,plot_63,0,FALSE,
-64,2020_712795,plot_64,0,FALSE,
-65,2020_277597,plot_65,0,FALSE,
+60,2020_38965,plot_60,0,FALSE,NA
+61,2020_259558,plot_61,0,FALSE,NA
+62,2020_255965,plot_62,0,FALSE,NA
+63,2020_569094,plot_63,0,FALSE,NA
+64,2020_712795,plot_64,0,FALSE,NA
+65,2020_277597,plot_65,0,FALSE,NA
 66,2020_582509,plot_66,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-67,2020_205701,plot_67,0,FALSE,
-68,2020_349880,plot_68,0,FALSE,
-69,2020_258858,plot_69,0,FALSE,
-70,2020_181556,plot_70,0,FALSE,
-71,2020_366521,plot_71,0,FALSE,
-72,2020_576491,plot_72,0,FALSE,
-73,2020_287297,plot_73,0,FALSE,
-74,2020_48046,plot_74,0,FALSE,
-75,2020_395435,plot_75,0,FALSE,
-76,2020_308914,plot_76,0,FALSE,
-77,2020_751145,plot_77,0,FALSE,
+67,2020_205701,plot_67,0,FALSE,NA
+68,2020_349880,plot_68,0,FALSE,NA
+69,2020_258858,plot_69,0,FALSE,NA
+70,2020_181556,plot_70,0,FALSE,NA
+71,2020_366521,plot_71,0,FALSE,NA
+72,2020_576491,plot_72,0,FALSE,NA
+73,2020_287297,plot_73,0,FALSE,NA
+74,2020_48046,plot_74,0,FALSE,NA
+75,2020_395435,plot_75,0,FALSE,NA
+76,2020_308914,plot_76,0,FALSE,NA
+77,2020_751145,plot_77,0,FALSE,NA
 78,2020_120580,plot_78,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 79,2020_562420,plot_79,0,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-80,2020_759585,plot_80,0,FALSE,
-81,2020_271392,plot_81,0,FALSE,
-82,2020_229195,plot_82,0,FALSE,
-83,2020_751265,plot_83,0,FALSE,
-84,2020_143288,plot_84,0,FALSE,
-85,2020_471140,plot_85,0,FALSE,
-86,2020_146488,plot_86,0,FALSE,
-87,2020_744789,plot_87,0,FALSE,
-88,2020_268767,plot_88,0,FALSE,
-89,2020_589232,plot_89,0,FALSE,
-90,2020_227239,plot_90,0,FALSE,
-91,2020_487160,plot_91,0,FALSE,
-92,2020_304271,plot_92,0,FALSE,
-93,2020_523459,plot_93,0,FALSE,
-94,2020_317865,plot_94,0,FALSE,
-95,2020_753580,plot_95,0,FALSE,
-96,2020_471402,plot_96,0,FALSE,
-97,2020_138889,plot_97,0,FALSE,
-98,2020_657300,plot_98,0,FALSE,
-99,2020_78454,plot_99,0,FALSE,
-100,2020_270617,plot_100,0,FALSE,
+80,2020_759585,plot_80,0,FALSE,NA
+81,2020_271392,plot_81,0,FALSE,NA
+82,2020_229195,plot_82,0,FALSE,NA
+83,2020_751265,plot_83,0,FALSE,NA
+84,2020_143288,plot_84,0,FALSE,NA
+85,2020_471140,plot_85,0,FALSE,NA
+86,2020_146488,plot_86,0,FALSE,NA
+87,2020_744789,plot_87,0,FALSE,NA
+88,2020_268767,plot_88,0,FALSE,NA
+89,2020_589232,plot_89,0,FALSE,NA
+90,2020_227239,plot_90,0,FALSE,NA
+91,2020_487160,plot_91,0,FALSE,NA
+92,2020_304271,plot_92,0,FALSE,NA
+93,2020_523459,plot_93,0,FALSE,NA
+94,2020_317865,plot_94,0,FALSE,NA
+95,2020_753580,plot_95,0,FALSE,NA
+96,2020_471402,plot_96,0,FALSE,NA
+97,2020_138889,plot_97,0,FALSE,NA
+98,2020_657300,plot_98,0,FALSE,NA
+99,2020_78454,plot_99,0,FALSE,NA
+100,2020_270617,plot_100,0,FALSE,NA
 101,2020_616502,plot_101,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-102,2020_473322,plot_102,1,FALSE,
+102,2020_473322,plot_102,1,FALSE,NA
 103,2020_398758,plot_103,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 104,2020_380988,plot_104,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 105,2020_170541,plot_105,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 106,2020_666502,plot_106,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-107,2020_456175,plot_107,1,FALSE,
-108,2020_449129,plot_108,1,FALSE,
-109,2020_376359,plot_109,1,FALSE,
+107,2020_456175,plot_107,1,FALSE,NA
+108,2020_449129,plot_108,1,FALSE,NA
+109,2020_376359,plot_109,1,FALSE,NA
 110,2020_643665,plot_110,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 111,2020_190721,plot_111,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-112,2020_746557,plot_112,1,FALSE,
-113,2020_69787,plot_113,1,FALSE,
+112,2020_746557,plot_112,1,FALSE,NA
+113,2020_69787,plot_113,1,FALSE,NA
 114,2020_546893,plot_114,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 115,2020_735236,plot_115,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 116,2020_238491,plot_116,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-117,2020_444418,plot_117,1,FALSE,
+117,2020_444418,plot_117,1,FALSE,NA
 118,2020_335505,plot_118,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 119,2020_255651,plot_119,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 120,2020_303274,plot_120,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 121,2020_592948,plot_121,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-122,2020_37297,plot_122,1,FALSE,
+122,2020_37297,plot_122,1,FALSE,NA
 123,2020_228731,plot_123,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 124,2020_439340,plot_124,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-125,2020_415577,plot_125,1,FALSE,
-126,2020_468711,plot_126,1,FALSE,
-127,2020_672112,plot_127,1,FALSE,
-128,2020_235689,plot_128,1,FALSE,
+125,2020_415577,plot_125,1,FALSE,NA
+126,2020_468711,plot_126,1,FALSE,NA
+127,2020_672112,plot_127,1,FALSE,NA
+128,2020_235689,plot_128,1,FALSE,NA
 129,2020_310530,plot_129,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 130,2020_531641,plot_130,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-131,2020_761445,plot_131,1,FALSE,
+131,2020_761445,plot_131,1,FALSE,NA
 132,2020_764896,plot_132,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-133,2020_88478,plot_133,1,FALSE,
-134,2020_475767,plot_134,1,FALSE,
+133,2020_88478,plot_133,1,FALSE,NA
+134,2020_475767,plot_134,1,FALSE,NA
 135,2020_124054,plot_135,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-136,2020_554743,plot_136,1,FALSE,
+136,2020_554743,plot_136,1,FALSE,NA
 137,2020_742735,plot_137,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 138,2020_81200,plot_138,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-139,2020_79581,plot_139,1,FALSE,
+139,2020_79581,plot_139,1,FALSE,NA
 140,2020_115103,plot_140,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 141,2020_737793,plot_141,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-142,2020_655309,plot_142,1,FALSE,
+142,2020_655309,plot_142,1,FALSE,NA
 143,2020_17588,plot_143,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-144,2020_652277,plot_144,1,FALSE,
+144,2020_652277,plot_144,1,FALSE,NA
 145,2020_714776,plot_145,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 146,2020_135031,plot_146,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 147,2020_365666,plot_147,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-148,2020_724480,plot_148,1,FALSE,
+148,2020_724480,plot_148,1,FALSE,NA
 149,2020_47768,plot_149,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 150,2020_239669,plot_150,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 151,2020_535289,plot_151,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 152,2020_703680,plot_152,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 153,2020_430150,plot_153,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 154,2020_43379,plot_154,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-155,2020_717901,plot_155,1,FALSE,
+155,2020_717901,plot_155,1,FALSE,NA
 156,2020_389529,plot_156,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 157,2020_624773,plot_157,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 158,2020_540299,plot_158,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 159,2020_496847,plot_159,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-160,2020_600562,plot_160,1,FALSE,
+160,2020_600562,plot_160,1,FALSE,NA
 161,2020_187310,plot_161,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 162,2020_521079,plot_162,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 163,2020_265076,plot_163,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
@@ -166,55 +166,55 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 165,2020_728181,plot_165,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 166,2020_162181,plot_166,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 167,2020_75894,plot_167,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-168,2020_563691,plot_168,1,FALSE,
+168,2020_563691,plot_168,1,FALSE,NA
 169,2020_650699,plot_169,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 170,2020_698350,plot_170,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-171,2020_454795,plot_171,1,FALSE,
+171,2020_454795,plot_171,1,FALSE,NA
 172,2020_189109,plot_172,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 173,2020_538753,plot_173,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 174,2020_533370,plot_174,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-175,2020_59209,plot_175,1,FALSE,
-176,2020_711128,plot_176,1,FALSE,
+175,2020_59209,plot_175,1,FALSE,NA
+176,2020_711128,plot_176,1,FALSE,NA
 177,2020_672519,plot_177,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 178,2020_672540,plot_178,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 179,2020_149617,plot_179,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 180,2020_225407,plot_180,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 181,2020_744523,plot_181,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-182,2020_243820,plot_182,1,FALSE,
-183,2020_85219,plot_183,1,FALSE,
-184,2020_408693,plot_184,1,FALSE,
-185,2020_748209,plot_185,1,FALSE,
-186,2020_511741,plot_186,1,FALSE,
+182,2020_243820,plot_182,1,FALSE,NA
+183,2020_85219,plot_183,1,FALSE,NA
+184,2020_408693,plot_184,1,FALSE,NA
+185,2020_748209,plot_185,1,FALSE,NA
+186,2020_511741,plot_186,1,FALSE,NA
 187,2020_713254,plot_187,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 188,2020_366692,plot_188,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 189,2020_432930,plot_189,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 190,2020_162875,plot_190,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 191,2020_549405,plot_191,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-192,2020_172313,plot_192,1,FALSE,
-193,2020_592040,plot_193,1,FALSE,
+192,2020_172313,plot_192,1,FALSE,NA
+193,2020_592040,plot_193,1,FALSE,NA
 194,2020_638365,plot_194,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-195,2020_179729,plot_195,1,FALSE,
+195,2020_179729,plot_195,1,FALSE,NA
 196,2020_159434,plot_196,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 197,2020_728342,plot_197,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 198,2020_187981,plot_198,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
 199,2020_598461,plot_199,1,TRUE,parcel_metadata2020.csv; parcel_metadata2020Honza.csv
-200,2020_552525,plot_200,1,FALSE,
-201,2020_653037,plot_201,1,FALSE,
-202,2020_269824,plot_202,1,FALSE,
-203,2020_53273,plot_203,1,FALSE,
-204,2020_631641,plot_204,1,FALSE,
-205,2020_495888,plot_205,1,FALSE,
+200,2020_552525,plot_200,1,FALSE,NA
+201,2020_653037,plot_201,1,FALSE,NA
+202,2020_269824,plot_202,1,FALSE,NA
+203,2020_53273,plot_203,1,FALSE,NA
+204,2020_631641,plot_204,1,FALSE,NA
+205,2020_495888,plot_205,1,FALSE,NA
 206,2020_727152,plot_206,1,TRUE,parcel_metadata2020.csv
 207,2020_534867,plot_207,1,TRUE,parcel_metadata2020.csv
-208,2020_539381,plot_208,1,FALSE,
-209,2020_416644,plot_209,1,FALSE,
+208,2020_539381,plot_208,1,FALSE,NA
+209,2020_416644,plot_209,1,FALSE,NA
 210,2020_709254,plot_210,1,TRUE,parcel_metadata2020.csv
-211,2020_716200,plot_211,1,FALSE,
+211,2020_716200,plot_211,1,FALSE,NA
 212,2020_515719,plot_212,1,TRUE,parcel_metadata2020.csv
-213,2020_728341,plot_213,1,FALSE,
-214,2020_752722,plot_214,1,FALSE,
+213,2020_728341,plot_213,1,FALSE,NA
+214,2020_752722,plot_214,1,FALSE,NA
 215,2020_683143,plot_215,1,TRUE,parcel_metadata2020.csv
-216,2020_132514,plot_216,1,FALSE,
+216,2020_132514,plot_216,1,FALSE,NA
 217,2020_711368,plot_217,1,TRUE,parcel_metadata2020.csv
 218,2020_424587,plot_218,1,TRUE,parcel_metadata2020.csv
 219,2020_307230,plot_219,1,TRUE,parcel_metadata2020.csv
@@ -222,30 +222,30 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 221,2020_95741,plot_221,1,TRUE,parcel_metadata2020.csv
 222,2020_452346,plot_222,1,TRUE,parcel_metadata2020.csv
 223,2020_479636,plot_223,1,TRUE,parcel_metadata2020.csv
-224,2020_406659,plot_224,1,FALSE,
-225,2020_307194,plot_225,1,FALSE,
+224,2020_406659,plot_224,1,FALSE,NA
+225,2020_307194,plot_225,1,FALSE,NA
 226,2020_499828,plot_226,1,TRUE,parcel_metadata2020.csv
-227,2020_464264,plot_227,1,FALSE,
-228,2020_464265,plot_228,1,FALSE,
-229,2020_431818,plot_229,1,FALSE,
+227,2020_464264,plot_227,1,FALSE,NA
+228,2020_464265,plot_228,1,FALSE,NA
+229,2020_431818,plot_229,1,FALSE,NA
 230,2020_124114,plot_230,1,TRUE,parcel_metadata2020.csv
 231,2020_720216,plot_231,1,TRUE,parcel_metadata2020.csv
 232,2020_140286,plot_232,1,TRUE,parcel_metadata2020.csv
-233,2020_426833,plot_233,1,FALSE,
+233,2020_426833,plot_233,1,FALSE,NA
 234,2020_92759,plot_234,1,TRUE,parcel_metadata2020.csv
 235,2020_339189,plot_235,1,TRUE,parcel_metadata2020.csv
 236,2020_769457,plot_236,1,TRUE,parcel_metadata2020.csv
 237,2020_92556,plot_237,1,TRUE,parcel_metadata2020.csv
 238,2020_447215,plot_238,1,TRUE,parcel_metadata2020.csv
 239,2020_563904,plot_239,1,TRUE,parcel_metadata2020.csv
-240,2020_58697,plot_240,1,FALSE,
-241,2020_240407,plot_241,1,FALSE,
-242,2020_16421,plot_242,1,FALSE,
+240,2020_58697,plot_240,1,FALSE,NA
+241,2020_240407,plot_241,1,FALSE,NA
+242,2020_16421,plot_242,1,FALSE,NA
 243,2020_18429,plot_243,1,TRUE,parcel_metadata2020.csv
 244,2020_62943,plot_244,1,TRUE,parcel_metadata2020.csv
 245,2020_142338,plot_245,1,TRUE,parcel_metadata2020.csv
 246,2020_436090,plot_246,1,TRUE,parcel_metadata2020.csv
-247,2020_713969,plot_247,1,FALSE,
+247,2020_713969,plot_247,1,FALSE,NA
 248,2020_475839,plot_248,1,TRUE,parcel_metadata2020.csv
 249,2020_598910,plot_249,1,TRUE,parcel_metadata2020.csv
 250,2020_661314,plot_250,1,TRUE,parcel_metadata2020.csv
@@ -260,7 +260,7 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 259,2020_335703,plot_259,1,TRUE,parcel_metadata2020.csv
 260,2020_366130,plot_260,1,TRUE,parcel_metadata2020.csv
 261,2020_264285,plot_261,1,TRUE,parcel_metadata2020.csv
-262,2020_471679,plot_262,1,FALSE,
+262,2020_471679,plot_262,1,FALSE,NA
 263,2020_673464,plot_263,1,TRUE,parcel_metadata2020.csv
 264,2020_163888,plot_264,1,TRUE,parcel_metadata2020.csv
 265,2020_474077,plot_265,1,TRUE,parcel_metadata2020.csv
@@ -268,13 +268,13 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 267,2020_358310,plot_267,1,TRUE,parcel_metadata2020.csv
 268,2020_347642,plot_268,1,TRUE,parcel_metadata2020.csv
 269,2020_687835,plot_269,1,TRUE,parcel_metadata2020.csv
-270,2020_30316,plot_270,1,FALSE,
+270,2020_30316,plot_270,1,FALSE,NA
 271,2020_32590,plot_271,1,TRUE,parcel_metadata2020.csv
 272,2020_374814,plot_272,1,TRUE,parcel_metadata2020.csv
 273,2020_466741,plot_273,1,TRUE,parcel_metadata2020.csv
-274,2020_627697,plot_274,1,FALSE,
+274,2020_627697,plot_274,1,FALSE,NA
 275,2020_432433,plot_275,1,TRUE,parcel_metadata2020.csv
-276,2020_271118,plot_276,1,FALSE,
+276,2020_271118,plot_276,1,FALSE,NA
 277,2020_45295,plot_277,1,TRUE,parcel_metadata2020.csv
 278,2020_354968,plot_278,1,TRUE,parcel_metadata2020.csv
 279,2020_267207,plot_279,1,TRUE,parcel_metadata2020.csv
@@ -290,28 +290,28 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 289,2020_650679,plot_289,1,TRUE,parcel_metadata2020.csv
 290,2020_560709,plot_290,1,TRUE,parcel_metadata2020.csv
 291,2020_507958,plot_291,1,TRUE,parcel_metadata2020.csv
-292,2020_393553,plot_292,1,FALSE,
-293,2020_339497,plot_293,1,FALSE,
-294,2020_505733,plot_294,1,FALSE,
+292,2020_393553,plot_292,1,FALSE,NA
+293,2020_339497,plot_293,1,FALSE,NA
+294,2020_505733,plot_294,1,FALSE,NA
 295,2020_545283,plot_295,1,TRUE,parcel_metadata2020.csv
 296,2020_714779,plot_296,1,TRUE,parcel_metadata2020.csv
 297,2020_421346,plot_297,1,TRUE,parcel_metadata2020.csv
 298,2020_624352,plot_298,1,TRUE,parcel_metadata2020.csv
-299,2020_169110,plot_299,1,FALSE,
+299,2020_169110,plot_299,1,FALSE,NA
 300,2020_758070,plot_300,1,TRUE,parcel_metadata2020.csv
-301,2020_39910,plot_301,1,FALSE,
-302,2020_754264,plot_302,1,FALSE,
+301,2020_39910,plot_301,1,FALSE,NA
+302,2020_754264,plot_302,1,FALSE,NA
 303,2020_19870,plot_303,1,TRUE,parcel_metadata2020.csv
 304,2020_727151,plot_304,1,TRUE,parcel_metadata2020.csv
 305,2020_139219,plot_305,1,TRUE,parcel_metadata2020.csv
-306,2020_242209,plot_306,1,FALSE,
-307,2020_72503,plot_307,1,FALSE,
+306,2020_242209,plot_306,1,FALSE,NA
+307,2020_72503,plot_307,1,FALSE,NA
 308,2020_39081,plot_308,1,TRUE,parcel_metadata2020.csv
 309,2020_596375,plot_309,1,TRUE,parcel_metadata2020.csv
 310,2020_324163,plot_310,1,TRUE,parcel_metadata2020.csv
 311,2020_722178,plot_311,1,TRUE,parcel_metadata2020.csv
 312,2020_318992,plot_312,1,TRUE,parcel_metadata2020.csv
-313,2020_740166,plot_313,1,FALSE,
+313,2020_740166,plot_313,1,FALSE,NA
 314,2020_356577,plot_314,1,TRUE,parcel_metadata2020.csv
 315,2020_128383,plot_315,1,TRUE,parcel_metadata2020.csv
 316,2020_651647,plot_316,1,TRUE,parcel_metadata2020.csv
@@ -322,8 +322,8 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 321,2020_549558,plot_321,1,TRUE,parcel_metadata2020.csv
 322,2020_463613,plot_322,1,TRUE,parcel_metadata2020.csv
 323,2020_704927,plot_323,1,TRUE,parcel_metadata2020.csv
-324,2020_614259,plot_324,1,FALSE,
-325,2020_734096,plot_325,1,FALSE,
+324,2020_614259,plot_324,1,FALSE,NA
+325,2020_734096,plot_325,1,FALSE,NA
 326,2020_614323,plot_326,1,TRUE,parcel_metadata2020.csv
 327,2020_113399,plot_327,1,TRUE,parcel_metadata2020.csv
 328,2020_279026,plot_328,1,TRUE,parcel_metadata2020.csv
@@ -334,7 +334,7 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 333,2020_713970,plot_333,1,TRUE,parcel_metadata2020.csv
 334,2020_41921,plot_334,1,TRUE,parcel_metadata2020.csv
 335,2020_332848,plot_335,1,TRUE,parcel_metadata2020.csv
-336,2020_211453,plot_336,1,FALSE,
+336,2020_211453,plot_336,1,FALSE,NA
 337,2020_624107,plot_337,1,TRUE,parcel_metadata2020.csv
 338,2020_550887,plot_338,1,TRUE,parcel_metadata2020.csv
 339,2020_89325,plot_339,1,TRUE,parcel_metadata2020.csv
@@ -345,29 +345,29 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 344,2020_712099,plot_344,1,TRUE,parcel_metadata2020.csv
 345,2020_430706,plot_345,1,TRUE,parcel_metadata2020.csv
 346,2020_691433,plot_346,1,TRUE,parcel_metadata2020.csv
-347,2020_354836,plot_347,1,FALSE,
+347,2020_354836,plot_347,1,FALSE,NA
 348,2020_691465,plot_348,1,TRUE,parcel_metadata2020.csv
-349,2020_464784,plot_349,1,FALSE,
+349,2020_464784,plot_349,1,FALSE,NA
 350,2020_599720,plot_350,1,TRUE,parcel_metadata2020.csv
-351,2020_223103,plot_351,1,FALSE,
-352,2020_509780,plot_352,1,FALSE,
+351,2020_223103,plot_351,1,FALSE,NA
+352,2020_509780,plot_352,1,FALSE,NA
 353,2020_540260,plot_353,1,TRUE,parcel_metadata2020.csv
 354,2020_526386,plot_354,1,TRUE,parcel_metadata2020.csv
-355,2020_437009,plot_355,1,FALSE,
+355,2020_437009,plot_355,1,FALSE,NA
 356,2020_406176,plot_356,1,TRUE,parcel_metadata2020.csv
 357,2020_770858,plot_357,1,TRUE,parcel_metadata2020.csv
-358,2020_279869,plot_358,1,FALSE,
-359,2020_513078,plot_359,1,FALSE,
+358,2020_279869,plot_358,1,FALSE,NA
+359,2020_513078,plot_359,1,FALSE,NA
 360,2020_189590,plot_360,1,TRUE,parcel_metadata2020.csv
 361,2020_236219,plot_361,1,TRUE,parcel_metadata2020.csv
 362,2020_23613,plot_362,1,TRUE,parcel_metadata2020.csv
 363,2020_283065,plot_363,1,TRUE,parcel_metadata2020.csv
 364,2020_467947,plot_364,1,TRUE,parcel_metadata2020.csv
 365,2020_770322,plot_365,1,TRUE,parcel_metadata2020.csv
-366,2020_527433,plot_366,1,FALSE,
+366,2020_527433,plot_366,1,FALSE,NA
 367,2020_332315,plot_367,1,TRUE,parcel_metadata2020.csv
 368,2020_185373,plot_368,1,TRUE,parcel_metadata2020.csv
-369,2020_574544,plot_369,1,FALSE,
+369,2020_574544,plot_369,1,FALSE,NA
 370,2020_131471,plot_370,1,TRUE,parcel_metadata2020.csv
 371,2020_75957,plot_371,1,TRUE,parcel_metadata2020.csv
 372,2020_658852,plot_372,1,TRUE,parcel_metadata2020.csv
@@ -386,16 +386,16 @@ parcel_id,brp_id,folder_name,glyphosate,discarded,discard_source_files
 385,2020_560977,plot_385,1,TRUE,parcel_metadata2020.csv
 386,2020_265286,plot_386,1,TRUE,parcel_metadata2020.csv
 387,2020_651732,plot_387,1,TRUE,parcel_metadata2020.csv
-388,2020_74627,plot_388,1,FALSE,
-389,2020_534104,plot_389,1,FALSE,
+388,2020_74627,plot_388,1,FALSE,NA
+389,2020_534104,plot_389,1,FALSE,NA
 390,2020_186071,plot_390,1,TRUE,parcel_metadata2020.csv
 391,2020_700569,plot_391,1,TRUE,parcel_metadata2020.csv
 392,2020_118931,plot_392,1,TRUE,parcel_metadata2020.csv
 393,2020_189165,plot_393,1,TRUE,parcel_metadata2020.csv
 394,2020_603395,plot_394,1,TRUE,parcel_metadata2020.csv
 395,2020_713846,plot_395,1,TRUE,parcel_metadata2020.csv
-396,2020_188710,plot_396,1,FALSE,
+396,2020_188710,plot_396,1,FALSE,NA
 397,2020_756322,plot_397,1,TRUE,parcel_metadata2020.csv
 398,2020_296983,plot_398,1,TRUE,parcel_metadata2020.csv
-399,2020_572673,plot_399,1,FALSE,
+399,2020_572673,plot_399,1,FALSE,NA
 400,2020_608095,plot_400,1,TRUE,parcel_metadata2020.csv
