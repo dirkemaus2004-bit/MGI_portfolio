@@ -9,9 +9,72 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #0f172a;
     color: #e5e7eb;
     line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.gis-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 30%,
+            rgba(56,189,248,0.12),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 70%,
+            rgba(34,197,94,0.10),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            120deg,
+            #0f172a,
+            #111827,
+            #172554
+        );
+
+    overflow: hidden;
+}
+
+
+/* GIS-like contour lines */
+.gis-background::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+
+    background:
+        repeating-radial-gradient(
+            ellipse at center,
+            transparent 0px,
+            transparent 80px,
+            rgba(255,255,255,0.035) 82px,
+            transparent 84px
+        );
+
+    transform: rotate(-15deg);
+
+    animation: drift 60s linear infinite;
+}
+
+
+@keyframes drift {
+
+    from {
+        transform: translate(0,0) rotate(-15deg);
+    }
+
+    to {
+        transform: translate(-80px,40px) rotate(-15deg);
+    }
+
 }
 
 /* =========================
@@ -26,31 +89,60 @@ main {
 /* =========================
    HEADER
 ========================= */
+
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px 40px;
+    padding: 25px 40px;
     background: #111827;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
+
+
+/* Theme button top-left */
+
+#theme-toggle {
+    position: absolute;
+    left: 40px;
+}
+
+
+/* Center block */
+
+.header-center {
+    text-align: center;
+}
+
+
+/* Main name */
 
 header h1 {
-    font-size: 20px;
+    font-size: 48px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-/* NAV */
+
+/* Navigation below name */
+
 nav ul {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 25px;
     list-style: none;
 }
+
 
 nav a {
     color: #e5e7eb;
     text-decoration: none;
+    font-size: 16px;
 }
+
 
 nav a:hover {
     color: #38bdf8;
@@ -59,12 +151,45 @@ nav a:hover {
 /* =========================
    SECTIONS
 ========================= */
+/* =====================
+   ABOUT SECTION
+   ===================== */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--text-color);
+}
+
 section {
     margin-bottom: 60px;
     padding: 20px;
-    background: #1f2937;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31,41,55,0.75),
+            rgba(15,23,42,0.65)
+        );
+
+    backdrop-filter: blur(6px);
+
     border-radius: 12px;
 }
+
 #map {
     height: 400px;
     width: 100%;

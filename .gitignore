@@ -1,0 +1,6 @@
+.Rhistory
+.RData
+rsconnect/
+shiny_app/.Rhistory
+shiny_app/.RData
+shiny_app/rsconnect/
