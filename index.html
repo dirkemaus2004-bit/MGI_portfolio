@@ -28,6 +28,10 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Cesium.js"></script>
+
     <!-- Your CSS -->
     <link rel="stylesheet" href="style.css">
 
@@ -127,11 +131,50 @@ I began my studies with a Bachelor's degree in Environmental Sciences at Wagenin
     </div>
 </section>
 
-<!-- EDUCATION -->
-        <section id="education">
-            <h2>Education</h2>
-            <div class="content-block"></div>
-        </section>
+<section id="education">
+
+    <h2>Education</h2>
+
+    <div id="education-container">
+
+        <div id="education-globe"></div>
+
+        <div id="education-info">
+            <h3 id="education-title"></h3>
+            <h4 id="education-years"></h4>
+            <p id="education-description"></p>
+        </div>
+
+    </div>
+
+
+    <div id="education-timeline">
+
+        <div class="timeline-event" data-index="0">
+            2016<br>
+            High school
+        </div>
+
+        <div class="timeline-event" data-index="1">
+            2022<br>
+            BSc Environmental Sciences
+        </div>
+
+        <div class="timeline-event exchange" data-index="2">
+            2022<br>
+            Exchange Aveiro
+        </div>
+
+        <div class="timeline-event" data-index="3">
+            2025<br>
+            MSc GIS & Climate Studies
+        </div>
+
+    </div>
+
+</section>
+
+</section>
 
         <!-- SKILLS -->
         <section id="skills">
