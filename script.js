@@ -1,462 +1,578 @@
-window.addEventListener("DOMContentLoaded", () => {
-
-
-    // =====================
-    // EXPERIENCE MAP (LEAFLET)
-    // =====================
-
-    const map = L.map('map').setView([52.2, 5.3], 7);
-
-    L.tileLayer(
-        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        {
-            attribution: 'Tiles &copy; Esri'
-        }
-    ).addTo(map);
+window.addEventListener("DOMContentLoaded", async () => {
 
 
 
-    // =====================
-    // MARKERS
-    // =====================
-
-    const loobos = L.marker([52.161368, 5.736439]).addTo(map);
-
-    const traceForest = L.marker([52.032835, 6.649352]).addTo(map);
+/* =====================================================
+   CESIUM SETUP
+===================================================== */
 
 
-
-    traceForest.bindPopup(`
-        <b>Citizen science-based forest biodiversity monitoring dashboard</b><br><br>
-
-        Interactive web application combining LiDAR-derived forest metrics and
-        citizen science observations.<br><br>
-
-        <a href="files/prototype_presentation.pdf" target="_blank">
-            Open prototype description
-        </a>
-    `);
+Cesium.Ion.defaultAccessToken =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZDBiZGJmZC01ZjQxLTRlNzktYTRjYy04MDljYTExNGEzNmEiLCJpZCI6NDUzOTk0LCJpc3MiOiJodHRwczovL2FwaS5jZXNpdW0uY29tIiwiYXVkIjoidW5kZWZpbmVkX2RlZmF1bHQiLCJpYXQiOjE3ODM1MjQwMDl9.Ns22Zc0_aKIitOWL8Ps0VQoyLCNt32vVcdnnLRddN04";
 
 
 
-    loobos.bindPopup(`
-        <b>Loobos Flux Tower Site</b><br>
-        Bachelor thesis: Ozone effects on Gross Primary Productivity<br><br>
+const viewer = new Cesium.Viewer("cesium-map", {
+
+    terrain: Cesium.Terrain.fromWorldTerrain(),
+
+    animation: false,
+    timeline: false,
+    baseLayerPicker: false,
+    geocoder: false,
+    homeButton: false,
+    sceneModePicker: false,
+    navigationHelpButton: false
+
+});
+
+
+
+// 3D buildings
+
+const buildings =
+await Cesium.createOsmBuildingsAsync();
+
+
+viewer.scene.primitives.add(buildings);
+
+/* =====================================================
+   CAMERA HELPER
+===================================================== */
+
+function flyToLocation(
+    longitude,
+    latitude,
+    height=1500
+){
+
+
+    viewer.camera.flyTo({
+
+        destination:
+
+        Cesium.Cartesian3.fromDegrees(
+            longitude,
+            latitude,
+            height
+        ),
+
+
+        duration:2
+
+    });
+
+
+}
+
+/* =====================================================
+   EXPERIENCE DATA
+===================================================== */
+const experiences = {
+
+
+    loobos:{
+
+        lon:5.736439,
+
+        lat:52.161368,
+
+        height:1200,
+
+
+        title:
+        "Loobos Flux Tower Site",
+
+
+        description:
+        "Bachelor thesis: Ozone effects on Gross Primary Productivity."
+
+
+    },
+
+    trace:{
+
+        lon:6.649352,
+
+        lat:52.032835,
+
+        height:1200,
+
+
+        title:
+        "Forest biodiversity monitoring dashboard",
+
+
+        description:
+        "Interactive dashboard combining LiDAR-derived forest metrics and citizen science observations."
+
+    }
+
+
+};
+
+/* =====================================================
+   EXPERIENCE MARKERS
+===================================================== */
+
+
+const loobosPin = viewer.entities.add({
+
+    position: Cesium.Cartesian3.fromDegrees(
+        5.736439,
+        52.161368
+    ),
+
+    point: {
+        pixelSize: 12,
+        color: Cesium.Color.RED
+    },
+
+    label: {
+        text: "Loobos Flux Tower Site",
+        font: "14px sans-serif",
+        pixelOffset: new Cesium.Cartesian2(0,-25)
+    },
+
+    description: `
+        <h3>Loobos Flux Tower Site</h3>
+
+        <p>
+        Bachelor thesis: Ozone effects on Gross Primary Productivity.
+        </p>
 
         <a href="files/bsc_thesis_naar_overleaf.pdf" target="_blank">
-            Click here to view
+        Open thesis
         </a>
-    `);
+    `
+
+});
 
 
 
-    // =====================
-    // EXPERIENCE BUTTONS
-    // =====================
+const tracePin = viewer.entities.add({
 
-    const expLoobos = document.getElementById("exp-loobos");
-    const expWastewater = document.getElementById("exp-wastewater");
-    const expTrace = document.getElementById("exp-trace");
+    position: Cesium.Cartesian3.fromDegrees(
+        6.649352,
+        52.032835
+    ),
 
+    point: {
+        pixelSize: 12,
+        color: Cesium.Color.RED
+    },
 
-    expLoobos.addEventListener("click", () => {
+    label: {
+        text: "Forest biodiversity monitoring",
+        font: "14px sans-serif",
+        pixelOffset: new Cesium.Cartesian2(0,-25)
+    },
 
-        map.setView(
-            [52.161368, 5.736439],
-            12
-        );
+    description: `
+        <h3>Forest biodiversity monitoring dashboard</h3>
 
-        loobos.openPopup();
+        <p>
+        Interactive dashboard combining LiDAR-derived forest metrics
+        and citizen science observations.
+        </p>
 
-    });
+        <a href="files/prototype_presentation.pdf" target="_blank">
+        Open project description
+        </a>
+    `
 
+});
 
+/* =====================================================
+   EXPERIENCE BUTTONS
+===================================================== */
 
-    expTrace.addEventListener("click", () => {
+document.querySelectorAll(".experience-item").forEach(item => {
 
-        map.setView(
-            [52.032835, 6.649352],
-            14
-        );
+    item.addEventListener("click", () => {
 
-        traceForest.openPopup();
-
-    });
-
-
-
-    // =====================
-    // WASTEWATER POLYGON
-    // =====================
-
-    let maasWaal;
-
-
-    fetch("files/LandvanMaasenWaal.geojson")
-
-        .then(response => response.json())
-
-        .then(data => {
+        const project = item.dataset.project;
 
 
-            maasWaal = L.geoJSON(data, {
+        if (project === "loobos") {
 
-
-                style: {
-
-                    color:"black",
-                    weight:2,
-                    fillColor:"#000000",
-                    fillOpacity:0.2
-
-                },
-
-
-                onEachFeature:function(feature,layer){
-
-
-                    layer.bindPopup(`
-
-                    <b>Industrial Wastewater Project</b><br>
-
-                    Project with the objective to find the most cost-effective path
-                    for a wastewater pipeline<br><br>
-
-                    <a href="files/wastewater_pipeline.pdf" target="_blank">
-                    Click here to view
-                    </a>
-
-                    `);
-
-
-
-                    layer.on("mouseover",function(){
-
-                        this.setStyle({
-                            fillOpacity:0.35
-                        });
-
-                    });
-
-
-
-                    layer.on("mouseout",function(){
-
-                        this.setStyle({
-                            fillOpacity:0.2
-                        });
-
-                    });
-
-
-                }
-
-
-            }).addTo(map);
-
-
-        });
-
-
-
-    expWastewater.addEventListener("click",()=>{
-
-
-        if(maasWaal){
-
-            map.fitBounds(
-                maasWaal.getBounds()
+            flyToLocation(
+                5.736439,
+                52.161368,
+                1200
             );
-
-
-            maasWaal.eachLayer(function(layer){
-
-                layer.openPopup();
-
-            });
 
         }
 
 
-    });
+        if (project === "trace") {
+
+            flyToLocation(
+                6.649352,
+                52.032835,
+                1200
+            );
+
+        }
 
 
+        if (project === "wastewater" && wastewaterPolygon) {
+
+            viewer.flyTo(
+                wastewaterPolygon,
+                {
+                    duration: 2
+                }
+            );
+
+        }
 
 
+        if (project === "glyphosate" && glyphosatePolygon) {
 
-    // =====================
-    // GLYPHOSATE POLYGON
-    // =====================
+            viewer.flyTo(
+                glyphosatePolygon,
+                {
+                    duration: 2
+                }
+            );
 
-
-    fetch("files/leeuwarden_polygon.geojson")
-
-    .then(response=>response.json())
-
-    .then(data=>{
-
-
-        const leeuwardenPolygon = L.geoJSON(data,{
-
-
-            style:{
-
-                color:"black",
-                weight:2,
-                fillColor:"#000000",
-                fillOpacity:0.2
-
-            },
-
-
-            onEachFeature:function(feature,layer){
-
-
-                layer.bindPopup(`
-
-                <b>Glyphosate Detection Project</b><br>
-
-                Using remote sensing techniques to detect glyphosate application
-                <br><br>
-
-                <a href="https://dirkemaus.shinyapps.io/shiny_app/"
-                target="_blank">
-
-                Click here to view
-
-                </a>
-
-                `);
-
-
-
-                layer.on("mouseover",function(){
-
-                    this.setStyle({
-                        fillOpacity:0.35
-                    });
-
-                });
-
-
-
-                layer.on("mouseout",function(){
-
-                    this.setStyle({
-                        fillOpacity:0.2
-                    });
-
-                });
-
-
-            }
-
-
-        }).addTo(map);
-
-
+        }
 
     });
 
+});
+
+/* =====================================================
+   EXPERIENCE POLYGONS
+===================================================== */
 
 
 
-
-    // =====================
-    // EDUCATION CESIUM MAP
-    // =====================
-
-
-    Cesium.Ion.defaultAccessToken =
-    "YOUR_TOKEN_HERE";
+async function addPolygon(
+    file,
+    title,
+    description,
+    link
+){
 
 
+const response =
+await fetch(file);
 
-    const educationViewer = new Cesium.Viewer(
-    "education-globe",
+
+const geojson =
+await response.json();
+
+
+
+const polygon =
+await Cesium.GeoJsonDataSource.load(
+    geojson,
     {
 
-        terrain: Cesium.Terrain.fromWorldTerrain(),
+        fill:
+        Cesium.Color.CYAN.withAlpha(0.25),
 
-        imageryProvider: new Cesium.IonImageryProvider({
-            assetId: 2
-        }),
+        stroke:
+        Cesium.Color.WHITE,
 
-        animation:false,
-        timeline:false,
-        baseLayerPicker:false
+        strokeWidth:3
 
     }
 );
 
 
 
+viewer.dataSources.add(polygon);
 
-    Cesium.createOsmBuildingsAsync()
 
-    .then(function(buildings){
 
-        educationViewer.scene.primitives.add(buildings);
+polygon.entities.values.forEach(entity=>{
 
-    });
 
+    entity.name=title;
 
 
+    entity.description = `
+<h3>${title}</h3>
 
+<p>
+${description}
+</p>
 
-    const educationData = [
+<a href="${link}" target="_blank">
+Open project
+</a>
+`;
 
 
-        {
+});
 
-            title:"Almende College Isala",
 
-            years:"2016 - 2022",
+return polygon;
 
-            description:"Secondary education.",
 
-            longitude:6.3724645,
+}
 
-            latitude:51.9136228,
+let wastewaterPolygon =
+await addPolygon(
 
-            height:1500
+"files/LandvanMaasenWaal.geojson",
 
-        },
+"Industrial Wastewater Project",
 
+"Finding the most cost-effective path for an industrial wastewater pipeline."
 
-        {
+);
 
-            title:"Wageningen University & Research",
 
-            years:"2022 - 2025",
 
-            description:"BSc Environmental Sciences.",
+let glyphosatePolygon =
+await addPolygon(
 
-            longitude:5.6660124,
+"files/leeuwarden_polygon.geojson",
 
-            latitude:51.9854749,
+"Glyphosate Detection Project",
 
-            height:1200
+"Remote sensing based detection of glyphosate application."
 
-        },
+);
 
+const wastewaterButton =
+document.getElementById(
+"exp-wastewater"
+);
 
-        {
 
-            title:"Universidade de Aveiro",
+if(wastewaterButton){
 
-            years:"September 2022 - January 2023",
 
-            description:"Exchange semester during BSc Environmental Sciences.",
+wastewaterButton.onclick=()=>{
 
-            longitude:-8.6600424,
 
-            latitude:40.6305831,
-
-            height:1500
-
-        },
-
-
-        {
-
-            title:"Wageningen University & Research",
-
-            years:"2025 - present",
-
-            description:"MSc Geo-Information Science & Climate Studies.",
-
-            longitude:5.6660124,
-
-            latitude:51.9854749,
-
-            height:800
-
-        }
-
-
-    ];
-
-
-
-
-
-    function flyEducation(index){
-
-
-        const place = educationData[index];
-
-
-        educationViewer.camera.flyTo({
-
-
-            destination:
-
-            Cesium.Cartesian3.fromDegrees(
-
-                place.longitude,
-
-                place.latitude,
-
-                place.height
-
-            ),
-
-
-            duration:2
-
-
-        });
-
-
-
-        document.getElementById("education-title").innerHTML =
-            place.title;
-
-
-        document.getElementById("education-years").innerHTML =
-            place.years;
-
-
-        document.getElementById("education-description").innerHTML =
-            place.description;
-
-
+viewer.flyTo(
+    wastewaterPolygon,
+    {
+        duration:2
     }
+);
+
+
+};
+
+
+}
+
+const glyphosateButton =
+document.getElementById(
+"exp-guard"
+);
 
 
 
+if(glyphosateButton){
 
 
-    document
-
-    .querySelectorAll(".timeline-event")
-
-    .forEach(function(event){
+glyphosateButton.onclick=()=>{
 
 
-        event.addEventListener("click",function(){
+viewer.flyTo(
+    glyphosatePolygon,
+    {
+        duration:2
+    }
+);
 
 
-            flyEducation(
-
-                Number(
-                    this.dataset.index
-                )
-
-            );
+};
 
 
-        });
+}
 
 
-    });
+/* =====================================================
+   EDUCATION DATA
+===================================================== */
 
 
+const educationData=[
 
 
 
-    flyEducation(0);
+{
+
+title:
+"Almende College Isala",
+
+years:
+"2016 - 2022",
+
+description:
+"Secondary education.",
+
+lon:
+6.3724645,
+
+lat:
+51.9136228,
+
+height:
+1200
+
+},
+
+{
+
+title:
+"Wageningen University & Research",
+
+years:
+"2022 - 2025",
+
+description:
+"BSc Environmental Sciences.",
+
+lon:
+5.6660124,
+
+lat:
+51.9854749,
+
+height:
+1200
+
+},
+
+{
+
+title:
+"Universidade de Aveiro",
+
+years:
+"September 2022 - January 2023",
+
+description:
+"Exchange semester during BSc Environmental Sciences.",
+
+lon:
+-8.6600424,
+
+lat:
+40.6305831,
+
+height:
+1200
+
+},
+
+{
+
+title:
+"Wageningen University & Research",
+
+years:
+"2025 - present",
+
+description:
+"MSc Geo-Information Science & Climate Studies.",
+
+lon:
+5.6660124,
+
+lat:
+51.9854749,
+
+height:
+1000
+
+}
+
+
+];
+
+function showEducation(index){
+
+
+const place =
+educationData[index];
+
+
+
+flyToLocation(
+
+place.lon,
+
+place.lat,
+
+place.height
+
+);
+
+
+
+document.getElementById(
+"education-title"
+).innerHTML =
+place.title;
+
+
+
+document.getElementById(
+"education-years"
+).innerHTML =
+place.years;
+
+
+
+document.getElementById(
+"education-description"
+).innerHTML =
+place.description;
+
+
+}
+
+/* =====================================================
+   TIMELINE EVENTS
+===================================================== */
+
+
+document
+.querySelectorAll(".timeline-event")
+.forEach(event=>{
+
+
+event.addEventListener(
+"click",
+()=>{
+
+
+showEducation(
+
+Number(
+event.dataset.index
+
+)
+
+);
+
+
+}
+
+);
+
+
+});
+
+
+// start view
+
+flyToLocation(
+5.6660124,
+51.9854749,
+300000
+);
 
 
 

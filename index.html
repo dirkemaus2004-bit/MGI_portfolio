@@ -2,204 +2,316 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GIS Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="GIS portfolio website">
+<title>GIS Portfolio</title>
 
-    <!-- Theme script -->
-    <script>
-        (function () {
-            const savedTheme = localStorage.getItem("theme");
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+<meta name="description" content="GIS portfolio website">
 
-            const theme = savedTheme || (prefersDark ? "dark" : "light");
 
-            if (theme === "dark") {
-                document.documentElement.setAttribute("data-theme", "dark");
-            } else {
-                document.documentElement.removeAttribute("data-theme");
-            }
-        })();
-    </script>
+<!-- Theme initialization -->
+<script>
+(function(){
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    <link href="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    const theme = savedTheme || (prefersDark ? "dark" : "light");
 
-<script src="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Cesium.js"></script>
+    if(theme === "dark"){
+        document.documentElement.setAttribute("data-theme","dark");
+    }
 
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="style.css">
+})();
+</script>
+
+
+<!-- Cesium CSS -->
+<link 
+href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css"
+rel="stylesheet">
+
+
+<!-- Website CSS -->
+<link rel="stylesheet" href="style.css">
+
 
 </head>
 
+
 <body>
 
-<div class="gis-background"></div>
 
-<!-- HEADER -->
+<div class="background-left"></div>
+<div class="background-right"></div>
+
+
+
 <header>
 
+<div class="logo-area">
 
-    <button id="theme-toggle">
-        Toggle theme
-    </button>
+<h1>DIRK EMAUS</h1>
 
-    <div class="header-center">
+<button id="theme-toggle">
+Toggle theme
+</button>
 
-        <h1>Dirk Emaus</h1>
+</div>
 
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#exp">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
 
-    </div>
+<nav>
 
-</header>
+<ul>
 
-    <!-- MAIN -->
-    <main>
-
-        <!-- ABOUT -->
-<section id="about">
-    <h2>About Me</h2>
-
-    <div class="about-container">
-
-        <div class="about-text">
-            <p>
-                Hi there! I'm Dirk, a double Master's student in Geo-Information Science and Climate Studies with a strong interest in Earth system science and the ways human activities are reshaping our planet. I have been fascinated by the Earth's processes, landscapes, and geography for as long as I can remember, making my academic path a natural progression of those interests.
-
-I began my studies with a Bachelor's degree in Environmental Sciences at Wageningen University & Research, where I am currently continuing my education through both Master's programmes. My academic interests currently centre on remote sensing and its applications within Earth system science, with a particular focus on air quality, land–atmosphere interactions, and environmental monitoring using geospatial data.  
-            </p>
-
-            <p>
-                
-            </p>
-        </div>
-
-        <img src="files/foto.jpg" class="profile-photo" alt="Profile photo">
-
-    </div>
-</section>
-
-        <!-- EXPERIENCE (MAP SECTION) -->
-        <section id="exp">
-    <h2>Experience</h2>
-
-    <div class="experience-container">
-
-        <!-- MAP -->
-        <div id="map"></div>
-
-        <!-- EXPERIENCE INDEX -->
-        <div class="experience-index">
-
-            <h3>Projects</h3>
-
-            <ul>
-    <li id="exp-loobos">
-        BSc Thesis
-    </li>
-
-    <li id="exp-wastewater">
-        Industrial wastewater project
-    </li>
-
-    <li id="exp-trace">
-        Citizen science-based forest biodiversity monitoring dashboard
-    </li>
-    <li id="exp-guard">
-        Glyphosate detection project
-    </li>
+<li><a href="#about">About Me</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
 
 </ul>
 
-        </div>
+</nav>
 
-    </div>
+</header>
+
+
+
+
+
+<main>
+
+
+
+<section id="about">
+
+<h2>About Me</h2>
+
+
+<div class="about-container">
+
+
+<div class="about-text">
+
+<p>
+Hi there! I'm Dirk, a double Master's student in
+Geo-Information Science and Climate Studies with a strong
+interest in Earth system science and the ways human activities
+are reshaping our planet.
+</p>
+
+
+<p>
+I began my studies with a Bachelor's degree in Environmental
+Sciences at Wageningen University & Research, where I am
+currently continuing my education through both Master's
+programmes. Throughout my studies, I have developed experience
+with remote sensing, spatial analysis, and geospatial techniques
+to study environmental processes.
+</p>
+
+</div>
+
+
+<img 
+src="files/foto.jpg"
+class="profile-photo"
+alt="Profile photo">
+
+</div>
+
+
 </section>
+
+
+
+
+
+<section id="experience">
+
+
+<h2>Experience</h2>
+
+
+<div class="experience-layout">
+
+
+<div id="cesium-map"></div>
+
+
+
+<div class="experience-index">
+
+
+<h3>Projects</h3>
+
+
+<ul>
+
+
+<li class="experience-item" data-project="loobos">
+BSc Thesis
+</li>
+
+
+<li class="experience-item" data-project="wastewater">
+Industrial wastewater project
+</li>
+
+
+<li class="experience-item" data-project="trace">
+Forest biodiversity monitoring dashboard
+</li>
+
+
+<li class="experience-item" data-project="glyphosate">
+Glyphosate detection project
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
 
 <section id="education">
 
-    <h2>Education</h2>
 
-    <div id="education-container">
-
-        <div id="education-globe"></div>
-
-        <div id="education-info">
-            <h3 id="education-title"></h3>
-            <h4 id="education-years"></h4>
-            <p id="education-description"></p>
-        </div>
-
-    </div>
+<h2>Education</h2>
 
 
-    <div id="education-timeline">
+<div class="education-container">
 
-        <div class="timeline-event" data-index="0">
-            2016<br>
-            High school
-        </div>
 
-        <div class="timeline-event" data-index="1">
-            2022<br>
-            BSc Environmental Sciences
-        </div>
+<div class="education-info">
 
-        <div class="timeline-event exchange" data-index="2">
-            2022<br>
-            Exchange Aveiro
-        </div>
 
-        <div class="timeline-event" data-index="3">
-            2025<br>
-            MSc GIS & Climate Studies
-        </div>
+<h3 id="education-title"></h3>
 
-    </div>
+<p id="education-years"></p>
+
+<p id="education-description"></p>
+
+
+</div>
+
+
+
+
+<div class="education-timeline">
+
+
+<div class="timeline-event" data-index="0">
+2016<br>
+High school
+</div>
+
+
+<div class="timeline-event" data-index="1">
+2022<br>
+BSc Environmental Sciences
+</div>
+
+
+<div class="timeline-event" data-index="2">
+2022<br>
+Exchange semester
+</div>
+
+
+<div class="timeline-event" data-index="3">
+2025<br>
+MSc Geo-information Science
+</div>
+
+
+
+</div>
+
+
+</div>
+
 
 </section>
 
+
+
+
+
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="content-block"></div>
+
 </section>
 
-        <!-- SKILLS -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="content-block"></div>
-        </section>
 
-        <!-- CONTACT -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="content-block"></div>
-        </section>
 
-    </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Footer content</p>
-    </footer>
 
-    <!-- Leaflet -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<section id="projects">
 
-    <!-- Your script -->
-    <script src="script.js"></script>
+<h2>Projects</h2>
+
+<div class="content-block"></div>
+
+</section>
+
+
+
+
+
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="content-block"></div>
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+
+<footer>
+
+<p>
+GIS Portfolio
+</p>
+
+</footer>
+
+
+
+
+
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Cesium.js"></script>
+
+<script src="script.js"></script>
+
 
 </body>
 
