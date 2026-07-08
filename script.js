@@ -9,110 +9,170 @@ window.addEventListener("DOMContentLoaded", () => {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // =====================
-    // MARKER
-    // =====================
-    const loobos = L.marker([52.161368, 5.736439]).addTo(map);
 
-// =====================
-// TRACE FOREST PROJECT
-// =====================
+    // =====================
+    // MARKERS
+    // =====================
+
+    const loobos = L.marker([52.161368, 5.736439]).addTo(map);
 
     const traceForest = L.marker([52.032835, 6.649352]).addTo(map);
 
-traceForest.bindPopup(`
-    <b>TRACE Forest Biodiversity Dashboard</b><br><br>
 
-    Interactive web application combining:
-    <ul>
-        <li>LiDAR-derived forest metrics</li>
-        <li>Citizen science observations</li>
-    </ul>
+    traceForest.bindPopup(`
+        <b>Citizen science-based forest biodiversity monitoring dashboard</b><br><br>
 
-    <a href="files/prototype_presentation.pdf" target="_blank">
-        Open prototype description
-    </a>
-`);
+        Interactive web application combining LiDAR-derived forest metrics and
+        citizen science observations.</li>
+        </ul>
+
+        <a href="files/prototype_presentation.pdf" target="_blank">
+            Open prototype description
+        </a>
+    `);
+
 
     loobos.bindPopup(`
-    <b>Loobos Flux Tower Site</b><br>
-    Bachelor thesis: Ozone effects on Gross Primary Productivity<br><br>
-    <a href="files/bsc_thesis_naar_overleaf.pdf" target="_blank">
+        <b>Loobos Flux Tower Site</b><br>
+        Bachelor thesis: Ozone effects on Gross Primary Productivity<br><br>
+        <a href="files/bsc_thesis_naar_overleaf.pdf" target="_blank">
+            Click here to view
+        </a>
+    `);
+
+
+    // =====================
+    // EXPERIENCE BUTTONS
+    // =====================
+
+    const expLoobos = document.getElementById("exp-loobos");
+    const expWastewater = document.getElementById("exp-wastewater");
+    const expTrace = document.getElementById("exp-trace");
+    const expGuard = document.getElementById("exp-guard");
+
+
+    expLoobos.addEventListener("click", () => {
+        map.setView([52.161368, 5.736439], 12);
+        loobos.openPopup();
+    });
+
+
+    expTrace.addEventListener("click", () => {
+
+        map.setView(
+            [52.032835, 6.649352],
+            14
+        );
+
+        traceForest.openPopup();
+
+    });
+
+
+
+    // =====================
+    // POLYGON (MaasWaal)
+    // =====================
+
+    let maasWaal;
+
+    fetch("files/LandvanMaasenWaal.geojson")
+        .then(response => response.json())
+        .then(data => {
+
+            maasWaal = L.geoJSON(data, {
+
+                style: {
+                    color: "black",
+                    weight: 2,
+                    fillColor: "#000000",
+                    fillOpacity: 0.2
+                },
+
+                onEachFeature: function(feature, layer){
+
+                    layer.bindPopup(`
+    <b>Industrial Wastewater Project</b><br>
+    Project with the objective to find the most cost-effective path for a wastewater pipeline<br><br>
+    <a href="files/wastewater_pipeline.pdf" target="_blank">
         Click here to view
     </a>
 `);
 
-const expLoobos = document.getElementById("exp-loobos");
-const expWastewater = document.getElementById("exp-wastewater");
-const expTrace = document.getElementById("exp-trace");
+                    layer.on("mouseover", function () {
+                        this.setStyle({ fillOpacity: 0.35 });
+                    });
 
-expLoobos.addEventListener("click", () => {
-    map.setView([52.161368, 5.736439], 12);
-    loobos.openPopup();
-});
+                    layer.on("mouseout", function () {
+                        this.setStyle({ fillOpacity: 0.2 });
+                    });
 
-expTrace.addEventListener("click", () => {
+                }
 
-    map.setView(
-        [52.032835, 6.649352],
-        14
-    );
+            }).addTo(map);
 
-    traceForest.openPopup();
+        });
 
-});
 
-   // =====================
-// POLYGON (MaasWaal from GeoJSON)
-// =====================
-let maasWaal;
+    expWastewater.addEventListener("click", () => {
 
-fetch("files/LandvanMaasenWaal.geojson")
-    .then(response => response.json())
-    .then(data => {
+        if (maasWaal) {
 
-        maasWaal = L.geoJSON(data, {
+            map.fitBounds(maasWaal.getBounds());
 
-            style: {
-                color: "black",
-                weight: 2,
-                fillColor: "#000000",
-                fillOpacity: 0.2
-            },
+            maasWaal.eachLayer(function(layer){
+                layer.openPopup();
+            });
 
-            onEachFeature: function(feature, layer){
-
-                layer.bindPopup(`
-                    <b>${feature.properties.name}</b><br>
-                    ${feature.properties.project}
-                `);
-
-                layer.on("mouseover", function () {
-                    this.setStyle({ fillOpacity: 0.35 });
-                });
-
-                layer.on("mouseout", function () {
-                    this.setStyle({ fillOpacity: 0.2 });
-                });
-
-            }
-
-        }).addTo(map);
+        }
 
     });
 
-expWastewater.addEventListener("click", () => {
 
-    if (maasWaal) {
+    // =====================
+    // POLYGON (Leeuwarden)
+    // =====================
 
-        map.fitBounds(maasWaal.getBounds());
+    let leeuwardenPolygon;
 
-        maasWaal.eachLayer(function(layer){
-            layer.openPopup();
+    fetch("files/leeuwarden_polygon.geojson")
+        .then(response => response.json())
+        .then(data => {
+
+            leeuwardenPolygon = L.geoJSON(data, {
+
+                style: {
+                    color: "black",
+                    weight: 2,
+                    fillColor: "#000000",
+                    fillOpacity: 0.2
+                },
+
+                onEachFeature: function(feature, layer){
+
+                    layer.bindPopup(`
+    <b>Glyphosate Detection Project</b><br>
+    Using remote sensing techniques to detect glyphosate application<br><br>
+    <a href="https://dirkemaus.shinyapps.io/shiny_app/" target="_blank">
+        Click here to view
+    </a>
+`);
+
+
+                    layer.on("mouseover", function () {
+                        this.setStyle({ fillOpacity: 0.35 });
+                    });
+
+
+                    layer.on("mouseout", function () {
+                        this.setStyle({ fillOpacity: 0.2 });
+                    });
+
+                }
+
+            }).addTo(map);
+
         });
 
-    }
 
 });
-
-})
