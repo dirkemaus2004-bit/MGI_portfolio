@@ -7,8 +7,22 @@
 :root{
     --background:#07111f;
     --panel:rgba(15,23,42,0.65);
+    --section:rgba(15,23,42,0.55);
     --text:#e5e7eb;
     --accent:#38bdf8;
+    --heading:#e5e7eb;
+}
+
+
+[data-theme="light"]{
+
+    --background:#e8dfd0;
+    --panel:rgba(255,250,240,0.78);
+    --section:rgba(255,248,235,0.82);
+    --text:#332f2a;
+    --accent:#8b5e3c;
+    --heading:#5b3a29;
+
 }
 
 body{
@@ -40,7 +54,10 @@ body::before{
     z-index:-1;
 }
 
-
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 140px;
+}
 /* HEADER */
 
 header{
@@ -48,7 +65,7 @@ header{
     top:0;
     z-index:1000;
     padding:20px;
-    background:rgba(15,23,42,0.65);
+    background:var(--panel);
     backdrop-filter:blur(12px);
     text-align:center;
 }
@@ -62,7 +79,7 @@ header{
 .logo-area h1{
     font-size:40px;
     letter-spacing:4px;
-    color:var(--accent);
+    color:var(--heading);
 }
 
 #theme-toggle{
@@ -70,7 +87,7 @@ header{
     right:25px;
     top:20px;
     background:rgba(255,255,255,0.1);
-    color:white;
+    color:var(--text);
     border:none;
     padding:8px 15px;
     border-radius:8px;
@@ -128,14 +145,14 @@ nav a:hover{
 section{
     margin-bottom:45px;
     padding:25px;
-    background:rgba(15,23,42,0.55);
+    background:var(--section);
     backdrop-filter:blur(15px);
     border-radius:18px;
     border:1px solid rgba(255,255,255,0.08);
 }
 
 section h2{
-    color:var(--accent);
+    color:var(--heading);
     margin-bottom:20px;
     font-size:30px;
 }
@@ -165,13 +182,13 @@ section h2{
 /* EXPERIENCE */
 
 .experience-index{
-    background:rgba(15,23,42,0.75);
+    background:var(--panel);
     padding:20px;
     border-radius:15px;
 }
 
 .experience-index h3{
-    color:var(--accent);
+    color:var(--heading);
     margin-bottom:15px;
 }
 
@@ -220,7 +237,7 @@ section h2{
 }
 
 .education-info h3{
-    color:var(--accent);
+    color:var(--heading);
     font-size:26px;
 }
 
@@ -248,23 +265,112 @@ section h2{
     z-index:1;
     width:105px;
     height:105px;
+    padding:10px;
+    background:var(--panel);
+    border:2px solid var(--accent);
+    color:var(--text);
+    border-radius:50%;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:10px;
-    background:rgba(15,23,42,0.9);
-    border-radius:50%;
-    border:2px solid var(--accent);
     cursor:pointer;
-    transition:0.3s;
+    transition:.25s;
 }
 
 .timeline-event:hover{
-    transform:scale(1.1);
-    background:rgba(56,189,248,0.25);
+    transform:scale(1.08);
+    background:rgba(56,189,248,.25);
 }
 
+.timeline-year{
+    font-size:17px;
+    font-weight:700;
+    color:var(--accent);
+    line-height:1;
+    margin-bottom:5px;
+}
+
+.timeline-label{
+    font-size:10px;
+    line-height:1.2;
+    font-weight:500;
+}
+
+
+/* SKILLS */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+
+.skill-card{
+    background:rgba(15,23,42,0.65);
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+
+.skill-card h3{
+    color:var(--accent);
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+
+.skill-card ul{
+    list-style:none;
+}
+
+
+.skill-card li{
+    margin-bottom:10px;
+    padding-left:15px;
+    position:relative;
+}
+
+
+.skill-card li::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+}
+
+/* CONTACT */
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    margin-top:25px;
+}
+
+.contact-links a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:18px;
+    transition:.2s;
+}
+
+.contact-links i{
+    font-size:35px;
+    color:var(--accent);
+}
+
+.contact-links a:hover{
+    color:var(--accent);
+    transform:translateY(-3px);
+}
 
 /* FOOTER */
 
@@ -314,5 +420,13 @@ nav ul{
 .education-timeline::before{
     display:none;
 }
+
+
+/* skills mobile layout */
+
+.skills-grid{
+    grid-template-columns:1fr;
+}
+
 
 }

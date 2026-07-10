@@ -31,6 +31,8 @@ if(theme==="dark"){
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 
@@ -46,7 +48,7 @@ if(theme==="dark"){
 
 <div class="logo-area">
 
-<h1>DIRK EMAUS</h1>
+<h1>Dirk Emaus</h1>
 
 <button id="theme-toggle">
 Toggle theme
@@ -63,7 +65,6 @@ Toggle theme
 <li><a href="#experience">Experience</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 
 </ul>
@@ -96,7 +97,11 @@ ABOUT
 
 
 <p>
-Hi there! I'm Dirk, a double Master's student in Geo-Information Science and Climate Studies with a strong interest in Earth system science and the ways human activities are reshaping our planet. I began my studies with a Bachelor's degree in Environmental Sciences at Wageningen University & Research, where I am currently continuing my education through both Master's programmes. Throughout my studies, I have developed experience with remote sensing, spatial analysis, and geospatial techniques to study environmental processes.
+Hi there! I'm Dirk, a Master's student in Geo-Information Science and Climate Studies at Wageningen University & Research, with a strong interest in understanding Earth system processes and how human activities influence the environment. My academic journey started with a Bachelor's degree in Environmental Sciences, where I developed a broad interest in climate systems, ecology, air quality, and the interactions between natural and human-driven processes on Earth.
+
+During my studies, I became increasingly interested in studying environmental change from a larger systems perspective: understanding patterns, trends, and connections across landscapes and ecosystems. This interest has shaped my current focus on remote sensing, spatial analysis, and the use of geospatial techniques to investigate environmental processes. Through my Master's programmes, I am developing skills in spatial analysis and remote sensing to better understand environmental processes and their changes over time.
+
+
 </p>
 
 
@@ -223,56 +228,43 @@ Open project
 <p id="education-description"></p>
 
 
-</div>
+<div class="education-container">
 
+    <div class="education-info">
 
+        <h3 id="education-title"></h3>
 
+        <p id="education-years"></p>
 
-<div class="education-timeline">
+        <p id="education-description"></p>
 
+    </div>
 
+    <div class="education-timeline">
 
-<div class="timeline-event" data-index="0">
+        <div class="timeline-event" data-index="0">
+            <span class="timeline-year">2016</span>
+            <span class="timeline-label">High school</span>
+        </div>
 
-2016<br>
-High school
+        <div class="timeline-event" data-index="1">
+            <span class="timeline-year">2022</span>
+            <span class="timeline-label">BSc Environmental Sciences</span>
+        </div>
 
-</div>
+        <div class="timeline-event" data-index="2">
+            <span class="timeline-year">2022</span>
+            <span class="timeline-label">Exchange semester</span>
+        </div>
 
+        <div class="timeline-event" data-index="3">
+            <span class="timeline-year">2025</span>
+            <span class="timeline-label">MSc GIS & Climate Studies</span>
+        </div>
 
-
-<div class="timeline-event" data-index="1">
-
-2022<br>
-BSc Environmental Sciences
-
-</div>
-
-
-
-<div class="timeline-event" data-index="2">
-
-2022<br>
-Exchange semester
-
-</div>
-
-
-
-<div class="timeline-event" data-index="3">
-
-2025<br>
-MSc GIS & Climate Studies
+    </div>
 
 </div>
-
-
-
-</div>
-
-
-</div>
-
 
 </section>
 
@@ -297,48 +289,76 @@ MSc GIS & Climate Studies
 </div>
 
 
-
-
-
-
-
 <section id="skills">
 
-<h2>
-Skills
-</h2>
+<h2>Skills</h2>
 
-<div class="content-block"></div>
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>Languages</h3>
+
+<ul>
+<li>Python</li>
+<li>R</li>
+</ul>
+
+</div>
+
+
+<div class="skill-card">
+
+<h3>Software</h3>
+
+<ul>
+<li>ArcGIS Pro</li>
+<li>QGIS</li>
+<li>Google Earth Engine</li>
+</ul>
+
+</div>
+
+
+<div class="skill-card">
+
+<h3>Soft Skills</h3>
+
+<ul>
+<li>Critical thinking </li>
+<li>Collaborating in multidisciplinary teams</li>
+<li>Time management</li>
+</ul>
+
+</div>
+
+
+</div>
 
 </section>
-
-
-
-
-<section id="projects">
-
-<h2>
-Projects
-</h2>
-
-<div class="content-block"></div>
-
-</section>
-
-
 
 
 
 <section id="contact">
 
-<h2>
-Contact
-</h2>
+<h2>Contact</h2>
 
-<div class="content-block"></div>
+<div class="contact-links">
+
+<a href="https://www.linkedin.com/in/dirk-emaus-858414301/" target="_blank">
+    <i class="fa-brands fa-linkedin"></i>
+    <span>LinkedIn</span>
+</a>
+
+
+<a href="mailto:dirkemaus2004@gmail.com">
+    <i class="fa-solid fa-envelope"></i>
+    <span>Gmail</span>
+</a>
+
+</div>
 
 </section>
-
 
 
 </main>

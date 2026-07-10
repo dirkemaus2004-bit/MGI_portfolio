@@ -14,10 +14,8 @@ const viewer = new Cesium.Viewer("cesium-map",{
     navigationHelpButton:false
 });
 
-
 const buildings = await Cesium.createOsmBuildingsAsync();
 viewer.scene.primitives.add(buildings);
-
 
 
 function flyToLocation(lon,lat,height=1500){
@@ -28,10 +26,7 @@ function flyToLocation(lon,lat,height=1500){
 }
 
 
-
-/* =====================
-   PROJECT DATA
-===================== */
+/* PROJECT DATA */
 
 const projects={
 
@@ -51,38 +46,45 @@ trace:{
     title:"Forest biodiversity monitoring dashboard",
     description:"Interactive dashboard combining LiDAR-derived forest metrics and citizen science observations.",
     link:"files/prototype_presentation.pdf"
+},
+
+wastewater:{
+    title:"Industrial Wastewater Project",
+    description:"Finding the most cost-effective path for an industrial wastewater pipeline.",
+    link:"files/wastewater_pipeline.pdf"
+},
+
+glyphosate:{
+    title:"Glyphosate Detection Project",
+    description:"Remote sensing based detection of glyphosate application.",
+    link:"https://dirkemaus.shinyapps.io/shiny_app/"
 }
 
 };
 
 
-
 function updateProjectInfo(project){
 
-    document.getElementById("project-title").innerHTML=project.title;
+document.getElementById("project-title").innerHTML=project.title;
 
-    document.getElementById("project-description").innerHTML=project.description;
+document.getElementById("project-description").innerHTML=project.description;
 
-    const link=document.getElementById("project-link");
+const link=document.getElementById("project-link");
 
-    link.href=project.link;
-    link.style.display="block";
+link.href=project.link;
+link.style.display="block";
 
 }
 
 
-
-
-/* =====================
-   EXPERIENCE PINS
-===================== */
+/* PINS */
 
 
 viewer.entities.add({
 
 position:Cesium.Cartesian3.fromDegrees(
-    5.736439,
-    52.161368
+5.736439,
+52.161368
 ),
 
 point:{
@@ -92,27 +94,22 @@ point:{
 
 label:{
     text:"Loobos Flux Tower",
-    pixelOffset:new Cesium.Cartesian2(0,-25)
-},
-
-description:
-`
-<h3>Loobos Flux Tower Site</h3>
-<p>Bachelor thesis: Ozone effects on Gross Primary Productivity.</p>
-<a href="files/bsc_thesis_naar_overleaf.pdf" target="_blank">
-Open thesis
-</a>
-`
+    font:"11px sans-serif",
+    pixelOffset:new Cesium.Cartesian2(0,-18),
+    fillColor:Cesium.Color.WHITE,
+    outlineColor:Cesium.Color.BLACK,
+    outlineWidth:2,
+    style:Cesium.LabelStyle.FILL_AND_OUTLINE
+}
 
 });
-
 
 
 viewer.entities.add({
 
 position:Cesium.Cartesian3.fromDegrees(
-    6.649352,
-    52.032835
+6.649352,
+52.032835
 ),
 
 point:{
@@ -122,28 +119,22 @@ point:{
 
 label:{
     text:"Forest biodiversity monitoring",
-    pixelOffset:new Cesium.Cartesian2(0,-25)
-},
-
-description:
-`
-<h3>Forest biodiversity monitoring dashboard</h3>
-<p>Interactive dashboard combining LiDAR-derived forest metrics and citizen science observations.</p>
-<a href="files/prototype_presentation.pdf" target="_blank">
-Open project description
-</a>
-`
+    font:"11px sans-serif",
+    pixelOffset:new Cesium.Cartesian2(0,-18),
+    fillColor:Cesium.Color.WHITE,
+    outlineColor:Cesium.Color.BLACK,
+    outlineWidth:2,
+    style:Cesium.LabelStyle.FILL_AND_OUTLINE
+}
 
 });
 
 
 
-/* =====================
-   POLYGONS
-===================== */
+/* POLYGONS */
 
 
-async function loadPolygon(file,title,description,link){
+async function loadPolygon(file,title,description){
 
 const data=await fetch(file).then(r=>r.json());
 
@@ -156,55 +147,42 @@ const polygon=await Cesium.GeoJsonDataSource.load(
     }
 );
 
-
 viewer.dataSources.add(polygon);
-
 
 polygon.entities.values.forEach(e=>{
 
 e.name=title;
 
-e.description=
-`
+e.description=`
 <h3>${title}</h3>
 <p>${description}</p>
-<a href="${link}" target="_blank">
-Open project
-</a>
 `;
 
 });
-
 
 return polygon;
 
 }
 
 
-
 const wastewaterPolygon =
 await loadPolygon(
 "files/LandvanMaasenWaal.geojson",
 "Industrial Wastewater Project",
-"Finding the most cost-effective path for an industrial wastewater pipeline.",
-"files/wastewater_pipeline.pdf"
+"Finding the most cost-effective path for an industrial wastewater pipeline."
 );
-
 
 
 const glyphosatePolygon =
 await loadPolygon(
 "files/leeuwarden_polygon.geojson",
 "Glyphosate Detection Project",
-"Remote sensing based detection of glyphosate application.",
-"https://dirkemaus.shinyapps.io/shiny_app/"
+"Remote sensing based detection of glyphosate application."
 );
 
 
 
-/* =====================
-   EXPERIENCE BUTTONS
-===================== */
+/* EXPERIENCE BUTTONS */
 
 
 document.querySelectorAll(".experience-item").forEach(item=>{
@@ -218,11 +196,9 @@ if(projects[type]){
 
 const p=projects[type];
 
-flyToLocation(
-p.lon,
-p.lat,
-p.height
-);
+if(p.lon){
+    flyToLocation(p.lon,p.lat,p.height);
+}
 
 updateProjectInfo(p);
 
@@ -231,23 +207,26 @@ updateProjectInfo(p);
 
 if(type==="wastewater"){
 
-viewer.flyTo(wastewaterPolygon,{duration:2});
+viewer.flyTo(
+wastewaterPolygon,
+{duration:2}
+);
 
-document.getElementById("project-title").innerHTML=
-"Industrial Wastewater Project";
+updateProjectInfo(projects.wastewater);
 
 }
 
 
 if(type==="glyphosate"){
 
-viewer.flyTo(glyphosatePolygon,{duration:2});
+viewer.flyTo(
+glyphosatePolygon,
+{duration:2}
+);
 
-document.getElementById("project-title").innerHTML=
-"Glyphosate Detection Project";
+updateProjectInfo(projects.glyphosate);
 
 }
-
 
 };
 
@@ -255,9 +234,7 @@ document.getElementById("project-title").innerHTML=
 
 
 
-/* =====================
-   EDUCATION
-===================== */
+/* EDUCATION */
 
 
 const education=[
@@ -301,7 +278,6 @@ height:1000
 ];
 
 
-
 function showEducation(i){
 
 const e=education[i];
@@ -312,15 +288,11 @@ e.lat,
 e.height
 );
 
-
 document.getElementById("education-title").innerHTML=e.title;
-
 document.getElementById("education-years").innerHTML=e.years;
-
 document.getElementById("education-description").innerHTML=e.description;
 
 }
-
 
 
 document.querySelectorAll(".timeline-event").forEach(event=>{
@@ -336,12 +308,49 @@ Number(event.dataset.index)
 });
 
 
-
 flyToLocation(
 5.6660124,
 51.9854749,
 300000
 );
+
+
+/* THEME */
+
+
+const themeButton=document.getElementById("theme-toggle");
+
+themeButton.addEventListener("click",()=>{
+
+const current=document.documentElement.getAttribute("data-theme");
+
+if(current==="dark"){
+
+document.documentElement.setAttribute(
+"data-theme",
+"light"
+);
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+}else{
+
+document.documentElement.setAttribute(
+"data-theme",
+"dark"
+);
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+}
+
+});
 
 
 });
